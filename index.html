@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ARKAN</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4ff;
+        color: #111;
+      }
+
+      /* ===== منوی کشویی ===== */
+      .hamburger {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1000;
+        background-color: #4444ff;
+        border: none;
+        border-radius: 6px;
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+        box-shadow: 0 2px 10px #4444ff88;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 0;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: white;
+        border-radius: 3px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 3px;
+        background-color: white;
+        margin: 4px 0;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+
+      .side-menu {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 250px;
+        height: 100%;
+        background-color: white;
+        box-shadow: 3px 0 20px #00000022;
+        z-index: 999;
+        transition: 0.3s;
+        padding-top: 80px;
+      }
+
+      .side-menu.open {
+        left: 0;
+      }
+
+      .side-menu a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 25px;
+        color: #333;
+        text-decoration: none;
+        font-size: 16px;
+        border-bottom: 1px solid #eee;
+        transition: 0.2s;
+      }
+
+      .side-menu a:hover {
+        background-color: #f0f4ff;
+        color: #4444ff;
+        padding-left: 35px;
+      }
+
+      .side-menu a span {
+        font-size: 20px;
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000044;
+        z-index: 998;
+      }
+
+      .overlay.open {
+        display: block;
+      }
+
+      /* ===== هدر ===== */
+      header {
+        background: linear-gradient(135deg, #ffffff, #e8eeff);
+        text-align: center;
+        padding: 60px 20px;
+        border-bottom: 2px solid #4444ff;
+        box-shadow: 0 2px 15px #4444ff22;
+      }
+
+      header h1 {
+        font-size: 80px;
+        color: #4444ff;
+        letter-spacing: 10px;
+        text-shadow: 2px 2px 10px #4444ff44;
+      }
+
+      header h2 {
+        font-size: 24px;
+        color: #6666cc;
+        margin-top: 10px;
+        letter-spacing: 5px;
+      }
+
+      header p {
+        margin-top: 15px;
+        color: #888;
+        font-size: 15px;
+      }
+
+      /* ===== نوار ناوبری ===== */
+      nav {
+        background-color: white;
+        text-align: center;
+        padding: 15px;
+        position: sticky;
+        top: 0;
+        box-shadow: 0 2px 10px #00000011;
+        z-index: 100;
+      }
+
+      nav a {
+        color: #4444ff;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
+
+      nav a:hover {
+        color: #2222cc;
+      }
+
+      /* ===== بخش‌ها ===== */
+      section {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+
+      section h3 {
+        font-size: 28px;
+        color: #4444ff;
+        border-left: 4px solid #4444ff;
+        padding-left: 15px;
+        margin-bottom: 20px;
+      }
+
+      section p {
+        color: #444;
+        line-height: 2;
+        font-size: 16px;
+      }
+
+      /* ===== کارت‌ها ===== */
+      .cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .card {
+        background-color: white;
+        border: 1px solid #4444ff44;
+        border-radius: 10px;
+        padding: 20px;
+        flex: 1;
+        min-width: 200px;
+        text-align: center;
+        box-shadow: 0 3px 15px #4444ff11;
+      }
+
+      .card h4 {
+        color: #4444ff;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: #666;
+        font-size: 14px;
+      }
+
+      /* ===== نمودار مهارت‌ها ===== */
+      .skill-box {
+        margin: 15px 0;
+      }
+
+      .skill-box label {
+        display: flex;
+        ju
+stify-content: space-between;
+        color: #4444ff;
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+
+      .skill-bar {
+        background-color: #e8eeff;
+        border-radius: 50px;
+        height: 18px;
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid #4444ff33;
+      }
+
+      .skill-fill {
+        height: 100%;
+        border-radius: 50px;
+        background: linear-gradient(90deg, #4444ff, #aaaaff);
+        box-shadow: 0 0 10px #4444ff44;
+        animation: fillBar 1.5s ease-out;
+      }
+
+      @keyframes fillBar {
+        from { width: 0%; }
+      }
+
+      /* ===== فرم ===== */
+      .form-box {
+        background-color: white;
+        border: 1px solid #4444ff44;
+        border-radius: 15px;
+        padding: 40px;
+        max-width: 500px;
+        margin: 20px auto;
+        box-shadow: 0 3px 20px #4444ff11;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: 1px solid #4444ff66;
+        background-color: #f8f9ff;
+        color: #111;
+        font-size: 15px;
+      }
+
+      input:focus, textarea:focus {
+        outline: none;
+        border-color: #4444ff;
+        box-shadow: 0 0 8px #4444ff33;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        margin-top: 15px;
+        background-color: #4444ff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #2222cc;
+      }
+
+      /* ===== دکمه تلگرام ===== */
+      .win-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: linear-gradient(135deg, #2AABEE, #229ED9);
+        color: white;
+        text-decoration: none;
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-size: 18px;
+        letter-spacing: 2px;
+        box-shadow: 0 5px 25px #2AABEE88;
+        transition: 0.3s;
+      }
+
+      .win-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 35px #2AABEEaa;
+      }
+
+      .tg-icon {
+        width: 32px;
+        height: 32px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .bottom-btn {
+        text-align: center;
+        padding: 40px;
+        background-color: #f0f4ff;
+      }
+
+      /* ===== فوتر ===== */
+      footer {
+        text-align: center;
+        padding: 30px;
+        background-color: white;
+        color: #aaa;
+        border-top: 1px solid #4444ff33;
+        font-size: 14px;
+        box-shadow: 0 -2px 10px #4444ff11;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- منوی کشویی -->
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="side-menu" id="sideMenu">
+      <a href="#about"><span>☰</span> Menu</a>
+      <a href="#account"><span>👤</span> Account</a>
+      <a href="#services"><span>⚙️</span> Services</a>
+      <a href="#contact"><span>✉️</span> Contact Us</a>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <!-- هدر -->
+    <header>
+      <h1>ARKAN</h1>
+      <h2>سارینا</h2>
+      <p>برنامه‌نویس | طراح وب | روانشناس</p>
+    </header>
+
+    <!-- نوار ناوبری -->
+    <nav>
+      <a href="#about">درباره من</a>
+      <a href="#resume">رزومه</a>
+      <a href="#skills">مهارت‌ها</a>
+      <a href="#contact">تماس</a>
+    </nav>
+
+    <!-- درباره من -->
+    <section id="about">
+      <h3>درباره من</h3>
+      <p>
+        سلام، ارکان هستم. شغل اصلی من رانندگی تاکسی است، اما دنیای من به همین‌جا ختم نمی‌شود.
+        در کنار کارم، به طراحی سایت و برنامه‌نویسی علاقه زیادی دارم و هر روز در این مسیر
+        پیشرفت می‌کنم. باور دارم که هیچ وقت برای یادگیری دیر نیست.
+      </p>
+    </section>
+
+    <!-- رزومه -->
+    <section id="resume">
+      <h3>رزومه</h3>
+      <p>
+        در زمینه روانشناسی آموزش دیده‌ام و این مهارت
+به من کمک می‌کند تا سایت‌هایی
+        طراحی کنم که تجربه کاربری بهتری دارند. در حال حاضر روی پروژه‌های
+        برنامه‌نویسی با C++ و طراحی سایت با HTML مشغول به کار هستم.
+        هدفم ارائه خدمات طراحی سایت با کیفیت بالا به مشتریان است.
+      </p>
+
+      <br>
+
+      <div class="cards">
+        <div class="card">
+          <h4>🚖 رانندگی</h4>
+          <p>شغل اصلی من رانندگی تاکسی است که انضباط و وقت‌شناسی را به من آموخته</p>
+        </div>
+        <div class="card">
+          <h4>🧠 روانشناسی</h4>
+          <p>آشنایی با روانشناسی به من کمک می‌کند سایت‌های کاربرپسند طراحی کنم</p>
+        </div>
+        <div class="card">
+          <h4>💻 برنامه‌نویسی</h4>
+          <p>در حال کار روی پروژه‌های C++ و طراحی سایت با HTML و CSS</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- نمودار مهارت‌ها -->
+    <section id="skills">
+      <h3>مهارت‌های من</h3>
+
+      <div class="skill-box">
+        <label><span>روانشناسی</span><span>۸۵%</span></label>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 85%"></div>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <label><span>HTML</span><span>۶۰%</span></label>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 60%"></div>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <label><span>CSS</span><span>۴۵%</span></label>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 45%"></div>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <label><span>C++</span><span>۳۵%</span></label>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 35%"></div>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <label><span>طراحی سایت</span><span>۵۵%</span></label>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 55%"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- تماس -->
+    <section id="contact">
+      <h3>تماس با من</h3>
+      <p>
+        برای سفارش طراحی سایت یا همکاری می‌توانید با من در تماس باشید.
+        پروژه‌های کوچک و بزرگ را با دقت و تعهد انجام می‌دهم.
+      </p>
+
+      <div class="form-box">
+        <input type="text" placeholder="اسم شما">
+        <input type="email" placeholder="ایمیل شما">
+        <input type="tel" placeholder="شماره تلفن">
+        <textarea rows="5" placeholder="پیام شما"></textarea>
+        <button>ارسال پیام</button>
+      </div>
+    </section>
+
+    <!-- دکمه تلگرام -->
+    <div class="bottom-btn">
+      <a href="https://www.google.com" target="_blank" class="win-btn">
+        <div class="tg-icon">✈️</div>
+        جستجو در گوگل
+      </a>
+    </div>
+
+    <!-- فوتر -->
+    <footer>
+      <p>تمامی حقوق برای ARKAN محفوظ است © 2024</p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById('sideMenu').classList.toggle('open');
+        document.getElementById('overlay').classList.toggle('open');
+      }
+    </script>
+
+  </body>
+</html>
