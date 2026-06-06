@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa" dir="rtl">
   <head>
     <title>ARKAN</title>
     <style>
@@ -11,29 +11,29 @@
 
       body {
         font-family: Arial, sans-serif;
-        background-color: #f0f4ff;
-        color: #111;
+        background-color: #0f0f0f;
+        color: #fff;
+        scroll-behavior: smooth;
       }
 
       /* ===== منوی کشویی ===== */
       .hamburger {
         position: fixed;
         top: 15px;
-        left: 15px;
+        right: 15px;
         z-index: 1000;
-        background-color: #4444ff;
+        background-color: #ff6600;
         border: none;
         border-radius: 6px;
         width: 38px;
         height: 38px;
         cursor: pointer;
-        box-shadow: 0 2px 10px #4444ff88;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 5px;
-        padding: 0;
+        box-shadow: 0 2px 10px #ff660088;
       }
 
       .hamburger span {
@@ -44,53 +44,62 @@
         border-radius: 3px;
       }
 
-      .hamburger span {
-        display: block;
-        width: 22px;
-        height: 3px;
-        background-color: white;
-        margin: 4px 0;
-        border-radius: 5px;
-        transition: 0.3s;
-      }
-
       .side-menu {
         position: fixed;
         top: 0;
-        left: -260px;
-        width: 250px;
+        right: -280px;
+        width: 270px;
         height: 100%;
-        background-color: white;
-        box-shadow: 3px 0 20px #00000022;
+        background-color: #1a1a1a;
+        border-left: 2px solid #ff6600;
         z-index: 999;
         transition: 0.3s;
-        padding-top: 80px;
+        padding-top: 70px;
       }
 
       .side-menu.open {
-        left: 0;
+        right: 0;
+      }
+
+      .side-menu h3 {
+        color: #ff6600;
+        padding: 15px 25px;
+        font-size: 13px;
+        letter-spacing: 3px;
+        border-bottom: 1px solid #333;
       }
 
       .side-menu a {
         display: flex;
         align-items: center;
         gap: 12px;
-        padding: 16px 25px;
-        color: #333;
+        padding: 14px 25px;
+        color: #ccc;
         text-decoration: none;
-        font-size: 16px;
-        border-bottom: 1px solid #eee;
+        font-size: 15px;
+        border-bottom: 1px solid #222;
         transition: 0.2s;
       }
 
       .side-menu a:hover {
-        background-color: #f0f4ff;
-        color: #4444ff;
-        padding-left: 35px;
+        background-color: #ff660011;
+        color: #ff6600;
+        padding-right: 35px;
       }
 
-      .side-menu a span {
-        font-size: 20px;
+      .sub-menu {
+        background-color: #111;
+        display: none;
+      }
+
+      .sub-menu.open {
+        display: block;
+      }
+
+      .sub-menu a {
+        padding-right: 45px;
+        font-size: 13px;
+        color: #aaa;
       }
 
       .overlay {
@@ -100,7 +109,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #00000044;
+        background-color: #00000066;
         z-index: 998;
       }
 
@@ -110,135 +119,255 @@
 
       /* ===== هدر ===== */
       header {
-        background: linear-gradient(135deg, #ffffff, #e8eeff);
+        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
         text-align: center;
-        padding: 60px 20px;
-        border-bottom: 2px solid #4444ff;
-        box-shadow: 0 2px 15px #4444ff22;
+        padding: 80px 20px 60px;
+        border-bottom: 2px solid #ff6600;
+        position: relative;
+        overflow: hidden;
       }
 
-      header h1 {
-        font-size: 80px;
-        color: #4444ff;
-        letter-spacing: 10px;
-        text-shadow: 2px 2px 10px #4444ff44;
+      header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, #ff660011 0%, transparent 60%);
+        animation: pulse 4s ease-in-out infinite;
       }
 
-      header h2 {
-        font-size: 24px;
-        color: #6666cc;
-        margin-top: 10px;
-        letter-spacing: 5px;
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.5; }
+        50% { transform: scale(1.1); opacity: 1; }
       }
 
-      header p {
-        margin-top: 15px;
-        color: #888;
+      .logo {
+        font-size: 90px;
+        font-weight: 900;
+        color: #ff6600;
+        letter-spacing: 15px;
+        text-shadow: 0 0 30px #ff660088, 0 0 60px #ff660044;
+        position: relative;
+        z-index: 1;
+      }
+
+      .subname {
+        font-size: 16px;
+        color: #ff660088;
+        letter-spacing: 8px;
+        margin-top: 5px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ===== سرچ ===== */
+      .search-box {
+        margin: 25px auto 0;
+        max-width: 500px;
+        display: flex;
+        position: relative;
+        z-index: 1;
+      }
+
+      .search-box input {
+        width: 100%;
+        padding: 14px 20px;
+        border-radius: 50px 0 0 50px;
+        border: 2px solid #ff6600;
+        background-color: #1a1a1a;
+        color: white;
         font-size: 15px;
+        outline: none;
       }
 
-      /* ===== نوار ناوبری ===== */
+      .search-box input::placeholder {
+        color: #666;
+      }
+
+      .search-box button {
+        padding: 14px 22px;background-color: #ff6600;
+        border: none;
+        border-radius: 0 50px 50px 0;
+        cursor: pointer;
+        font-size: 20px;
+        transition: 0.2s;
+      }
+
+      .search-box button:hover {
+        background-color: #dd4400;
+      }
+
+      /* ===== ناوبری ===== */
       nav {
-        background-color: white;
+        background-color: #1a1a1a;
         text-align: center;
         padding: 15px;
         position: sticky;
         top: 0;
-        box-shadow: 0 2px 10px #00000011;
         z-index: 100;
+        border-bottom: 1px solid #ff660033;
+        box-shadow: 0 2px 20px #00000088;
       }
 
       nav a {
-        color: #4444ff;
+        color: #ccc;
         text-decoration: none;
-        margin: 0 20px;
-        font-size: 16px;
-        letter-spacing: 2px;
+        margin: 0 15px;
+        font-size: 15px;
+        letter-spacing: 1px;
+        transition: 0.2s;
       }
 
       nav a:hover {
-        color: #2222cc;
+        color: #ff6600;
       }
 
       /* ===== بخش‌ها ===== */
       section {
-        max-width: 900px;
-        margin: 50px auto;
-        padding: 0 20px;
+        max-width: 950px;
+        margin: 70px auto;
+        padding: 0 25px;
       }
 
-      section h3 {
-        font-size: 28px;
-        color: #4444ff;
-        border-left: 4px solid #4444ff;
-        padding-left: 15px;
+      .section-title {
+        font-size: 30px;
+        color: #ff6600;
+        margin-bottom: 30px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #ff660033;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      /* ===== معرفی ===== */
+      .intro-box {
+        background: linear-gradient(135deg, #1a1a1a, #222);
+        border: 1px solid #ff660033;
+        border-radius: 20px;
+        padding: 40px;
+        line-height: 2;
+        color: #ccc;
+        font-size: 16px;
+        box-shadow: 0 5px 30px #ff660011;
+      }
+
+      .intro-box p {
         margin-bottom: 20px;
       }
 
-      section p {
-        color: #444;
-        line-height: 2;
-        font-size: 16px;
-      }
-
-      /* ===== کارت‌ها ===== */
-      .cards {
+      .btn-group {
         display: flex;
-        gap: 20px;
+        gap: 15px;
+        margin-top: 25px;
         flex-wrap: wrap;
-        margin-top: 20px;
       }
 
-      .card {
-        background-color: white;
-        border: 1px solid #4444ff44;
-        border-radius: 10px;
-        padding: 20px;
+      .btn-primary {
+        padding: 14px 30px;
+        background-color: #ff6600;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-primary:hover {
+        background-color: #dd4400;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px #ff660055;
+      }
+
+      .btn-outline {
+        padding: 14px 30px;
+        background-color: transparent;
+        color: #ff6600;
+        border: 2px solid #ff6600;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-outline:hover {
+        background-color: #ff660011;
+        transform: translateY(-2px);
+      }
+
+      /* ===== تیم و مهارت‌ها ===== */
+      .team-grid {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      .team-card {
+        background: #1a1a1a;
+        border: 1px solid #ff660033;
+        border-radius: 15px;
+        padding: 25px;
         flex: 1;
         min-width: 200px;
         text-align: center;
-        box-shadow: 0 3px 15px #4444ff11;
+        transition: 0.3s;
       }
 
-      .card h4 {
-        color: #4444ff;
-        font-size: 18px;
+      .team-card:hover {
+        border-color: #ff6600;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px #ff660022;
+      }
+
+      .team-avatar {
+        font-size: 50px;
         margin-bottom: 10px;
       }
 
-      .card p {
-        color: #666;
-        font-size: 14px;
+      .team-card h4 {
+        color: #ff6600;
+        font-size: 18px;
+        margin-bottom: 5px;
       }
 
-      /* ===== نمودار مهارت‌ها ===== */
+      .team-card p {
+        color: #888;
+        font-size: 13px;
+      }
+
       .skill-box {
         margin: 15px 0;
       }
 
       .skill-box label {
         display: flex;
-        ju
-stify-content: space-between;
-        color: #4444ff;
-        font-size: 15px;
+        justify-content: space-between;
+        color: #ff6600;
+        font-size: 14px;
         margin-bottom: 6px;
       }
 
       .skill-bar {
-        background-color: #e8eeff;
+        background-color: #222;
         border-radius: 50px;
-        height: 18px;
-        width: 100%;
+        height: 16px;
         overflow: hidden;
-        border: 1px solid #4444ff33;
+        border: 1px solid #ff660033;
       }
 
       .skill-fill {
         height: 100%;
         border-radius: 50px;
-        background: linear-gradient(90deg, #4444ff, #aaaaff);
-        box-shadow: 0 0 10px #4444ff44;
+        background: linear-gradient(90deg, #ff6600, #ffaa44);
+        box-shadow: 0 0 10px #ff660055;
         animation: fillBar 1.5s ease-out;
       }
 
@@ -246,248 +375,512 @@ stify-content: space-between;
         from { width: 0%; }
       }
 
-      /* ===== فرم ===== */
-      .form-box {
-        background-color: white;
-        border: 1px solid #4444ff44;
+      /* ===== خدمات ===== */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .service-card {
+        background: #1a1a1a;
+        border: 1px solid #ff660033;
         border-radius: 15px;
-        padding: 40px;
-        max-width: 500px;
-        margin: 20px auto;
-        box-shadow: 0 3px 20px #4444ff11;
+        padding: 30px 20px;
+        text-align: center;
+        transition: 0.3s;
+        cursor: pointer;
       }
 
-      input, textarea {
+      .service-card:hover {
+        border-color: #ff6600;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px #ff660022;
+      }
+
+      .service-icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+      }
+
+      .service-card h4 {
+        color: #ff6600;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .service-card p {
+        color: #888;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      /* ===== فرم تماس ===== */
+      .contact-grid {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .form-box {
+        flex: 2;
+        background: #1a1a1a;
+        border: 1px solid #ff660033;
+        border-radius: 20px;
+        padding: 35px;
+        min-width: 280px;
+      }
+
+      .form-box input,
+      .form-box textarea {
         width: 100%;
-        padding: 12px;
-        margin: 10px 0;
-        border-radius: 8px;
-        border: 1px solid #4444ff66;
-        background-color: #f8f9ff;
-        color: #111;
-        font-size: 15px;
-      }
-
-      input:focus, textarea:focus {
+        padding: 13px 15px;
+        margin: 8px 0;
+        border-radius: 10px;
+        border: 1px solid #ff660033;
+        background-color: #111;
+        color: white;
+        font-size: 14px;
         outline: none;
-        border-color: #4444ff;
-        box-shadow: 0 0 8px #4444ff33;
+        transition: 0.2s;
       }
 
-      button {
+      .form-box input:focus,
+      .form-box textarea:focus {
+        border-color: #ff6600;
+        box-shadow: 0 0 10px #ff660033;
+      }
+
+      .form-box button {
         width: 100%;
         padding: 14px;
-        margin-top: 15px;
-        background-color: #4444ff;
+        margin-top: 10px;
+        background-color: #ff6600;
         color: white;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-size: 16px;
         cursor: pointer;
         transition: 0.3s;
       }
 
-      button:hover {
-        background-color: #2222cc;
+      .form-box button:hover {
+        background-color: #dd4400;
+        box-shadow: 0 5px 20px #ff660055;
       }
 
-      /* ===== دکمه تلگرام ===== */
-      .win-btn {
-        display: inline-flex;
+      .contact-info {
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .contact-item {
+        background: #1a1a1a;
+        border: 1px solid #ff660033;
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
         align-items: center;
-        gap: 12px;
-        background: linear-gradient(135deg, #2AABEE, #229ED9);
-        color: white;
-        text-decoration: none;
-        padding: 15px 35px;
-        border-radius: 50px;
-        font-size: 18px;
-        letter-spacing: 2px;
-        box-shadow: 0 5px 25px #2AABEE88;
+        gap: 15px;
+        transition: 0.2s;
+      }
+
+      .contact-item:hover {
+        border-color: #ff6600;
+      }
+
+      .contact-item span:first-child {
+        font-size: 28px;
+      }
+
+      .contact-item div h5 {
+        color: #ff6600;
+        font-size: 13px;
+        margin-bottom: 3px;
+      }
+
+      .contact-item div p {
+        color: #888;
+        font-size: 13px;
+      }
+
+      /* ===== نظرات ===== */
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .review-card {
+        background: #1a1a1a;
+        border: 1px solid #ff660033;
+        border-radius: 15px;
+        padding: 25px;
         transition: 0.3s;
       }
 
-      .win-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 35px #2AABEEaa;
+      .review-card:hover {
+        border-color: #ff6600;
+        transform: translateY(-3px);
       }
 
-      .tg-icon {
-        width: 32px;
-        height: 32px;
-        background-color: white;
+      .review-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+      }
+
+      .review-avatar {
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
+        background: linear-gradient(135deg, #ff6600, #ffaa44);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 18px;
+        font-size: 20px;
       }
 
-      .bottom-btn {
-        text-align: center;
-        padding: 40px;
-        background-color: #f0f4ff;
+      .review-header h5 {
+        color: #ff6600;
+        font-size: 15px;
+      }
+
+      .review-header p {
+        color: #666;
+        font-size: 12px;
+      }
+
+      .stars {
+        color: #ff6600;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .review-card p {
+        color: #aaa;
+        font-size: 13px;
+        line-height: 1.8;
       }
 
       /* ===== فوتر ===== */
       footer {
+        background: #1a1a1a;
+        border-top: 2px solid #ff660033;
         text-align: center;
         padding: 30px;
-        background-color: white;
-        color: #aaa;
-        border-top: 1px solid #4444ff33;
-        font-size: 14px;
-        box-shadow: 0 -2px 10px #4444ff11;
+        color: #555;
+        font-size: 13px;
+        margin-top: 80px;
+      }
+
+      footer span {
+        color: #ff6600;
       }
     </style>
   </head>
   <body>
 
-    <!-- منوی کشویی -->
+    <!-- دکمه منو -->
     <button class="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
+    <!-- منوی کشویی -->
     <div class="side-menu" id="sideMenu">
-      <a href="#about"><span>☰</span> Menu</a>
-      <a href="#account"><span>👤</span> Account</a>
-      <a href="#services"><span>⚙️</span> Services</a>
-      <a href="#contact"><span>✉️</span> Contact Us</a>
+      <h3>ARKAN MENU</h3>
+
+      <a href="#" onclick="toggleAccount()">
+        👤 اکانت
+      </a>
+      <div class="sub-menu" id="accountMenu">
+        <a href="#">🔑 ورود</a>
+        <a href="#">📝 ثبت نام</a>
+      </div>
+
+      <a href="#products">📦 محصولات</a>
+      <a href="#contact">📞 تماس با ما</a>
     </div>
 
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
     <!-- هدر -->
     <header>
-      <h1>ARKAN</h1>
-      <h2>سارینا</h2>
-      <p>برنامه‌نویس | طراح وب | روانشناس</p>
+      <div class="logo">ARKAN</div>
+      <div class="subname">S A R I N A</div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="جستجو در گوگل...">
+        <button onclick="searchGoogle()">🔍</button>
+      </div>
     </header>
 
-    <!-- نوار ناوبری -->
+    <!-- ناوبری -->
     <nav>
-      <a href="#about">درباره من</a>
-      <a href="#resume">رزومه</a>
-      <a href="#skills">مهارت‌ها</a>
+      <a href="#intro">معرفی</a>
+      <a href="#team">تیم ما</a>
+      <a href="#services">خدمات</a>
       <a href="#contact">تماس</a>
+      <a href="#reviews">نظرات</a>
     </nav>
 
-    <!-- درباره من -->
-    <section id="about">
-      <h3>درباره من</h3>
-      <p>
-        سلام، ارکان هستم. شغل اصلی من رانندگی تاکسی است، اما دنیای من به همین‌جا ختم نمی‌شود.
-        در کنار کارم، به طراحی سایت و برنامه‌نویسی علاقه زیادی دارم و هر روز در این مسیر
-        پیشرفت می‌کنم. باور دارم که هیچ وقت برای یادگیری دیر نیست.
-      </p>
-    </section>
+    <!-- معرفی -->
+    <section id="intro">
+      <div class="section-title">👋 درباره من</div>
+      <div class="intro-box">
+        <p>
+          سلام! اسم من <strong style="color:#ff6600">ارکان</strong> است.
+          شغل اصلی من تاکسی‌رانی است، اما دنیای من به همین‌جا محدود نمی‌شود.
+          من در حال یادگیری برنامه‌نویسی در سطح حرفه‌ای هستم و می‌توانم
+          برای شما سایتی زیبا و دلبخواه طراحی کنم.
+        </p>
+        <p>
+          رشته دانشگاهی من <strong style="color:#ff6600">روانشناسی</strong> است
+          و این به من کمک می‌کند سلیقه و نیاز شما را بهتر درک کنم
+          و بهترین نتیجه را برایتان بسازم.
+        </p>
 
-    <!-- رزومه -->
-    <section id="resume">
-      <h3>رزومه</h3>
-      <p>
-        در زمینه روانشناسی آموزش دیده‌ام و این مهارت
-به من کمک می‌کند تا سایت‌هایی
-        طراحی کنم که تجربه کاربری بهتری دارند. در حال حاضر روی پروژه‌های
-        برنامه‌نویسی با C++ و طراحی سایت با HTML مشغول به کار هستم.
-        هدفم ارائه خدمات طراحی سایت با کیفیت بالا به مشتریان است.
-      </p>
-
-      <br>
-
-      <div class="cards">
-        <div class="card">
-          <h4>🚖 رانندگی</h4>
-          <p>شغل اصلی من رانندگی تاکسی است که انضباط و وقت‌شناسی را به من آموخته</p>
-        </div>
-        <div class="card">
-          <h4>🧠 روانشناسی</h4>
-          <p>آشنایی با روانشناسی به من کمک می‌کند سایت‌های کاربرپسند طراحی کنم</p>
-        </div>
-        <div class="card">
-          <h4>💻 برنامه‌نویسی</h4>
-          <p>در حال کار روی پروژه‌های C++ و طراحی سایت با HTML و CSS</p>
+        <div class="btn-group">
+          <a href="#team" class="btn-primary">بیشتر بدانید</a>
+          <a href="#contact" class="btn-outline">اقدام کنید</a>
         </div>
       </div>
     </section>
 
-    <!-- نمودار مهارت‌ها -->
-    <section id="skills">
-      <h3>مهارت‌های من</h3>
+    <!-- تیم و مهارت‌ها -->
+    <section id="team">
+      <div class="section-title">👥 درباره تیم ما</div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">👨‍💻</div>
+          <h4>ارکان</h4>
+          <p>طراح وب و برنامه‌نویس</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👩‍🎨</div>
+          <h4>سارینا</h4>
+          <p>روانشناس و مشاور</p>
+        </div>
+      </div>
+
+      <div class="section-title">📊 سطح مهارت‌های ما</div>
 
       <div class="skill-box">
-        <label><span>روانشناسی</span><span>۸۵%</span></label>
+        <label><span>🌐 HTML & CSS</span><span>۷۰%</span></label>
         <div class="skill-bar">
-          <div class="skill-fill" style="width: 85%"></div>
+          <div class="skill-fill" style="width:70%"></div>
         </div>
       </div>
 
       <div class="skill-box">
-        <label><span>HTML</span><span>۶۰%</span></label>
+        <label><span>⚡ JavaScript</span><span>۵۰%</span></label>
         <div class="skill-bar">
-          <div class="skill-fill" style="width: 60%"></div>
+          <div class="skill-fill" style="width:50%"></div>
         </div>
       </div>
 
       <div class="skill-box">
-        <label><span>CSS</span><span>۴۵%</span></label>
+        <label><span>🔍 سئو</span><span>۶۰%</span></label>
         <div class="skill-bar">
-          <div class="skill-fill" style="width: 45%"></div>
+          <div class="skill-fill" style="width:60%"></div>
         </div>
       </div>
 
       <div class="skill-box">
-        <label><span>C++</span><span>۳۵%</span></label>
+        <label><span>🧠 روانشناسی</span><span>۸۵%</span></label>
         <div class="skill-bar">
-          <div class="skill-fill" style="width: 35%"></div>
+          <div class="skill-fill" style="width:85%"></div>
         </div>
       </div>
 
       <div class="skill-box">
-        <label><span>طراحی سایت</span><span>۵۵%</span></label>
+        <label><span>🎨 طراحی UI</span><span>۵۵%</span></label>
         <div class="skill-bar">
-          <div class="skill-fill" style="width: 55%"></div>
+          <div class="skill-fill" style="width:55%"></div>
         </div>
+      </div>
+
+      <div class="skill-box">
+        <label><span>💻 C++</span><span>۳۵%</span></label>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:35%"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- خدمات -->
+    <section id="services">
+      <div class="section-title">⚙️ خدمات ما</div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h4>طراحی سایت</h4>
+          <p>طراحی سایت زیبا و حرفه‌ای متناسب با نیاز شما</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💡</div>
+          <h4>مشاوره</h4>
+          <p>مشاوره تخصصی در زمینه طراحی و توسعه کسب و کار آنلاین</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📐</div>
+          <h4>طراحی UI</h4>
+          <p>طراحی رابط کاربری زیبا و کاربرپسند برای سایت شما</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🚖</div>
+          <h4>جابجایی و باربری</h4>
+          <p>خدمات حمل و نقل و جابجایی بار با تاکسی در شهر</p>
+        </div>
+
       </div>
     </section>
 
     <!-- تماس -->
     <section id="contact">
-      <h3>تماس با من</h3>
-      <p>
-        برای سفارش طراحی سایت یا همکاری می‌توانید با من در تماس باشید.
-        پروژه‌های کوچک و بزرگ را با دقت و تعهد انجام می‌دهم.
-      </p>
+      <div class="section-title">📞 تماس با ما</div>
+      <div class="contact-grid">
 
-      <div class="form-box">
-        <input type="text" placeholder="اسم شما">
-        <input type="email" placeholder="ایمیل شما">
-        <input type="tel" placeholder="شماره تلفن">
-        <textarea rows="5" placeholder="پیام شما"></textarea>
-        <button>ارسال پیام</button>
+        <div class="form-box">
+          <input type="text" placeholder="نام شما">
+          <input type="email" placeholder="ایمیل شما">
+          <input type="tel" placeholder="شماره تماس">
+          <textarea rows="4" placeholder="پیام شما..."></textarea>
+          <button>ارسال پیام 🚀</button>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📱</span>
+            <div>
+              <h5>تلفن</h5>
+              <p>۰۹۱۲۳۴۵۶۷۸۹</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <div>
+              <h5>ایمیل</h5>
+              <p>arkan@email.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>📸</span>
+            <div>
+              <h5>اینستاگرام</h5>
+              <p>@arkan_design</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>✈️</span>
+            <div>
+              <h5>تلگرام</h5>
+              <p>@arkan_design</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- دکمه تلگرام -->
-    <div class="bottom-btn">
-      <a href="https://www.google.com" target="_blank" class="win-btn">
-        <div class="tg-icon">✈️</div>
-        جستجو در گوگل
-      </a>
-    </div>
+    <!-- نظرات -->
+    <section id="reviews">
+      <div class="section-title">💬 نظرات کاربران</div>
+      <div class="reviews-grid">
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">😊</div>
+            <div>
+              <h5>علی رضایی</h5>
+              <p>صاحب کافه</p>
+            </div>
+          </div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>سایت کافه‌ام را به ارکان سپردم. نتیجه فوق‌العاده بود! دقیقاً همان چیزی که می‌خواستم طراحی کرد.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">👩</div>
+            <div>
+              <h5>مریم احمدی</h5>
+              <p>فروشگاه آنلاین</p>
+            </div>
+          </div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>با مشاوره ارکان فروشگاه آنلاینم راه‌اندازی شد. درکش از نیاز مشتری واقعاً عالیه!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">👨</div>
+            <div>
+              <h5>سینا محمدی</h5>
+              <p>استارتاپ</p>
+            </div>
+          </div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>سایت استارتاپمون رو ارکان طراحی کرد. سریع، دقیق و با کیفیت بالا. حتماً پیشنهاد می‌کنم!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">👩‍💼</div>
+            <div>
+              <h5>نیلوفر کریمی</h5>
+              <p>مطب پزشکی</p>
+            </div>
+          </div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>سایت مطبم خیلی حرفه‌ای شد. بیماران راحت‌تر نوبت می‌گیرن. ممنون از ارکان عزیز!</p>
+        </div>
+
+      </div>
+    </section>
 
     <!-- فوتر -->
     <footer>
-      <p>تمامی حقوق برای ARKAN محفوظ است © 2024</p>
+      <p>تمامی حقوق برای <span>ARKAN</span> محفوظ است © 2024</p>
+      <p style="margin-top:8px">طراحی شده با ❤️ توسط <span>Arkan & Sarina</span></p>
     </footer>
 
     <script>
-      function toggleMenu() {
+      // منوی کشویی
+      function toggle
+Menu() {
         document.getElementById('sideMenu').classList.toggle('open');
         document.getElementById('overlay').classList.toggle('open');
       }
+
+      // زیرمنوی اکانت
+      function toggleAccount() {
+        document.getElementById('accountMenu').classList.toggle('open');
+      }
+
+      // سرچ گوگل
+      function searchGoogle() {
+        const query = document.getElementById('searchInput').value;
+        if (query.trim() !== '') {
+          window.open('https://www.google.com/search?q=' + query, '_blank');
+        }
+      }
+
+      // سرچ با Enter
+      document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') searchGoogle();
+      });
     </script>
 
   </body>
