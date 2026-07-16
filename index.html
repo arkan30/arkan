@@ -518,19 +518,22 @@
     }
 
     .photo-slot {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      border: 2px dashed rgba(255,255,255,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 13px;
-      color: rgba(255,255,255,0.8);
-      padding: 10px;
-    }
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
     /* ===== تماس ===== */
     .contact-grid {
@@ -731,13 +734,13 @@
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <span class="service-icon">🧠</span>
+          <span class="service-icon"></span>
           <h4>مشاوره روانشناسی</h4>
           <p>مشاوره فردی، خانوادگی و تحصیلی با رویکرد علمی و انسانی برای بهبود کیفیت زندگی</p>
           <a href="https://arkan30.github.io/arkan/#contact" class="btn-read">بیشتر بدانید</a>
         </div>
         <div class="service-card">
-          <span class="service-icon">💆</span>
+          <span class="service-icon"></span>
           <h4>روان‌درمانی</h4>
           <p>جلسات درمانی تخصصی برای کاهش اضطراب، افسردگی و مشکلات روحی با رویکرد نوین</p>
           <a href="https://arkan30.github.io/arkan/#contact" class="btn-read">بیشتر بدانید</a>
@@ -790,11 +793,11 @@
       <div class="skills-grid">
         <div class="team-cards">
           <div class="team-card">
-            <div class="team-avatar">🧑‍🏫</div>
+            <div class="team-avatar"></div>
             <div class="team-info"><h4>ارکان محمودی </h4><p>مشاور و طراح سایت</p></div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">💪</div>
+            <div class="team-avatar"></div>
             <div class="team-info"><h4>سارینا کارگر</h4><p>منشی شخصی</p></div>
           </div>
         </div>
