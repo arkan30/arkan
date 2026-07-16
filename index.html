@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
+<html lang="fa" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arkan | مشاوره و روان‌درمانی</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Arkan Mahmoudi | ارکان محمودی - مشاوره و روان‌درمانی</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="ارکان محمودی (Arkan Mahmoudi) - مشاور مدرسه و روانشناس در پاوه، کرمانشاه. مشاوره فردی، CBT، روانشناسی تحلیلی و طراحی وب.">
+  <meta name="keywords" content="ارکان, ارکان محمودی, Arkan, Arkan Mahmoudi, مشاوره روانشناسی پاوه, مشاور کرمانشاه, CBT">
+  <meta name="author" content="Arkan Mahmoudi">
+  <link rel="canonical" href="https://arkan30.github.io/arkan/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Arkan Mahmoudi | ارکان محمودی - مشاوره و روان‌درمانی">
+  <meta property="og:description" content="ارکان محمودی - مشاور مدرسه و روانشناس در پاوه، کرمانشاه.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arkan30.github.io/arkan/">
+  <meta property="og:locale" content="fa_IR">
+
+  <!-- Structured Data برای شناسایی بهتر توسط گوگل -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "ارکان محمودی",
+    "alternateName": ["Arkan Mahmoudi", "Arkan", "ارکان"],
+    "jobTitle": "مشاور مدرسه و روانشناس",
+    "url": "https://arkan30.github.io/arkan/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "پاوه",
+      "addressRegion": "کرمانشاه",
+      "addressCountry": "IR"
+    }
+  }
+  </script>
+
+  <link href="./Arkan _ مشاوره و روان_درمانی_files/css2" rel="stylesheet">
   <style>
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -73,35 +104,6 @@
     }
 
     .logo span { color: #5b9fd6; }
-
-    .search-box {
-      display: flex;
-      align-items: center;
-      background: #f0f7ff;
-      border: 1px solid #c8dff0;
-      border-radius: 50px;
-      padding: 8px 16px;
-      gap: 8px;
-      flex: 1;
-      max-width: 300px;
-    }
-
-    .search-box input {
-      border: none;
-      background: transparent;
-      outline: none;
-      font-size: 13px;
-      color: #333;
-      width: 100%;
-    }
-
-    .search-box button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      color: #1a4a7a;
-    }
 
     nav ul {
       list-style: none;
@@ -492,34 +494,42 @@
 
     @keyframes fillBar { from { width: 0; } }
 
-    /* ===== ساعت ===== */
-    .clock-bg { background: linear-gradient(135deg, #1a4a7a, #2e6fad); }
+    /* ===== عکس‌ها ===== */
+    .photos-bg { background: linear-gradient(135deg, #1a4a7a, #2e6fad); }
 
-    .clock-inner {
+    .photos-inner {
       text-align: center;
-      padding: 80px 30px;
+      padding: 60px 30px;
       color: white;
     }
 
-    .clock-time {
-      font-family: 'Poppins', sans-serif;
-      font-size: 80px;
-      font-weight: 700;
-      letter-spacing: 5px;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
-
-    .clock-seconds {
-      font-size: 30px;
-      color: rgba(255,255,255,0.6);
-      margin-top: -10px;
-    }
-
-    .clock-date {
-      font-size: 16px;
+    .photos-inner > p {
+      font-size: 14px;
       color: rgba(255,255,255,0.7);
-      margin-top: 10px;
       letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .photos-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .photo-slot {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 2px dashed rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      padding: 10px;
     }
 
     /* ===== تماس ===== */
@@ -611,65 +621,6 @@
     .contact-card h5 { color: #1a4a7a; font-size: 11px; letter-spacing: 1px; margin-bottom: 3px; }
     .contact-card p { color: #888; font-size: 13px; }
 
-    /* ===== نظرات ===== */
-    .reviews-bg { background: #f0f7ff; }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap: 20px;
-    }
-
-    .review-card {
-      background: white;
-      border: 1px solid #ddeeff;
-      border-radius: 18px;
-      padding: 28px;
-      transition: 0.3s;
-      position: relative;
-    }
-
-    .review-card::before {
-      content: '❝';
-      position: absolute;
-      top: 15px;
-      left: 20px;
-      font-size: 40px;
-      color: #ddeeff;
-      font-family: serif;
-    }
-
-    .review-card:hover {
-      border-color: #5b9fd6;
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(26,74,122,0.1);
-    }
-
-    .review-top {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 15px;
-    }
-
-    .r-avatar {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #1a4a7a, #5b9fd6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: white;
-      flex-shrink: 0;
-    }
-
-    .review-top h5 { color: #1a4a7a; font-size: 14px; margin-bottom: 2px; }
-    .review-top span { color: #aaa; font-size: 12px; }
-    .review-stars { color: #f0a500; font-size: 13px; margin-bottom: 12px; }
-    .review-card p { color: #666; font-size: 13px; line-height: 2; }
-
     /* ===== فوتر ===== */
     footer {
       background: #1a4a7a;
@@ -723,7 +674,7 @@
       .hamburger { display: flex; }
       nav ul { display: none; }
       .hero h2 { font-size: 28px; }
-      .clock-time { font-size: 50px; }
+      .photo-slot { width: 100px; height: 100px; }
     }
 
   </style>
@@ -731,7 +682,7 @@
 <body>
 
   <!-- پری‌لودر -->
-  <div id="preloader">
+  <div id="preloader" style="opacity: 0; display: none;">
     <div class="preloader-dot"></div>
     <div class="preloader-dot"></div>
     <div class="preloader-dot"></div>
@@ -741,18 +692,14 @@
   <header>
     <div class="header-inner">
       <div class="logo"><h1>ARK<span>AN</span></h1></div>
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="جستجو در گوگل...">
-        <button onclick="searchGoogle()">🔍</button>
-      </div>
       <nav>
         <ul>
-          <li><a href="#hero" class="active">خانه</a></li>
-          <li><a href="#services">خدمات</a></li>
-          <li><a href="#about">درباره من</a></li>
-          <li><a href="#skills">مهارت‌ها</a></li>
-          <li><a href="#contact">تماس</a></li>
-          <li class="nav-register"><a href="#contact">همین الان!</a></li>
+          <li><a href="https://arkan30.github.io/arkan/#hero" class="active">خانه</a></li>
+          <li><a href="https://arkan30.github.io/arkan/#services">خدمات</a></li>
+          <li><a href="https://arkan30.github.io/arkan/#about">درباره من</a></li>
+          <li><a href="https://arkan30.github.io/arkan/#skills">مهارت‌ها</a></li>
+          <li><a href="https://arkan30.github.io/arkan/#contact">تماس</a></li>
+          <li class="nav-register"><a href="https://arkan30.github.io/microgoal/" target="_blank">میکرو هدف</a></li>
         </ul>
       </nav>
     </div>
@@ -769,8 +716,8 @@
         بدون پیچیدگی های غیر ضروری
       </p>
       <div class="hero-btns">
-        <a href="#services" class="btn-main">خدمات ما</a>
-        <a href="#about" class="btn-ghost">بیشتر بدانید</a>
+        <a href="https://arkan30.github.io/arkan/#services" class="btn-main">خدمات ما</a>
+        <a href="https://arkan30.github.io/arkan/#about" class="btn-ghost">بیشتر بدانید</a>
       </div>
     </div>
   </div>
@@ -787,14 +734,13 @@
           <span class="service-icon">🧠</span>
           <h4>مشاوره روانشناسی</h4>
           <p>مشاوره فردی، خانوادگی و تحصیلی با رویکرد علمی و انسانی برای بهبود کیفیت زندگی</p>
-          <a href="#contact" class="btn-read">بیشتر بدانید</a>
+          <a href="https://arkan30.github.io/arkan/#contact" class="btn-read">بیشتر بدانید</a>
         </div>
         <div class="service-card">
           <span class="service-icon">💆</span>
           <h4>روان‌درمانی</h4>
           <p>جلسات درمانی تخصصی برای کاهش اضطراب، افسردگی و مشکلات روحی با رویکرد نوین</p>
-          <a href="#contact" class="btn-read">بیشتر بدانید</a
-        </div>
+          <a href="https://arkan30.github.io/arkan/#contact" class="btn-read">بیشتر بدانید</a>
       </div>
     </div>
   </div>
@@ -849,25 +795,27 @@
           </div>
           <div class="team-card">
             <div class="team-avatar">💪</div>
-            <div class="team-info"><h4>سارینا کارگر</h4><p>مربی فیتنس و تغذیه</p></div>
+            <div class="team-info"><h4>سارینا کارگر</h4><p>منشی شخصی</p></div>
           </div>
         </div>
         <div>
           <div class="skill-box"><div class="skill-label"><span>مشاوره روانشناسی</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-          <div class="skill-box"><div class="skill-label"><span>طراحی سایت</span><span>70%</span></div><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
-          <div class="skill-box"><div class="skill-label"><span>مربیگری فیتنس (سارینا)</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-box"><div class="skill-label"><span>سی‌بی‌تی (CBT)</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-box"><div class="skill-label"><span>مشاوره فردی</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+          <div class="skill-box"><div class="skill-label"><span>روانشناسی تحلیلی</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ساعت زنده -->
-  <div class="clock-bg">
-    <div class="clock-inner">
-      <div class="clock-time" id="liveClock">00:00:00</div>
-      <div class="clock-seconds" id="liveSeconds">00</div>
-      <div class="clock-date" id="liveDate"></div>
-      <div style="margin-top:30px;">⏰ زمان زنده ایران</div>
+  <!-- عکس‌ها -->
+  <div class="photos-bg">
+    <div class="photos-inner">
+      <p>تیم ما</p>
+      <div class="photos-row">
+        <div class="photo-slot">your photo here</div>
+        <div class="photo-slot">your photo here</div>
+      </div>
     </div>
   </div>
 
@@ -881,9 +829,9 @@
     <div class="contact-grid">
       <div class="form-box">
         <form id="contactForm">
-          <input type="text" placeholder="نام و نام خانوادگی" id="fullname" required>
+          <input type="text" placeholder="نام و نام خانوادگی" id="fullname" required="">
           <input type="email" placeholder="ایمیل" id="email">
-          <textarea rows="4" placeholder="پیام شما ..." id="msg" required></textarea>
+          <textarea rows="4" placeholder="پیام شما ..." id="msg" required=""></textarea>
           <button type="submit">ارسال پیام ✉️</button>
         </form>
         <p id="formStatus" style="font-size:12px; margin-top:12px; text-align:center; color:#5b9fd6;"></p>
@@ -896,29 +844,25 @@
       </div>
     </div>
   </div>
- <section style="background:#f0f7f0; padding:40px 20px; border-radius:12px; margin:40px 0; text-align:center; font-family:inherit;">
-  <h2 style="color:#1a4a2e; margin-bottom:15px;">میکروهدف — ابزار رشد شخصی</h2>
+ <section style="background:#f0f7ff; padding:40px 20px; border-radius:12px; margin:40px 0; text-align:center; font-family:inherit;">
+  <h2 style="color:#1a4a7a; margin-bottom:15px;">میکروهدف — ابزار رشد شخصی</h2>
   <p style="color:#444; line-height:1.8; max-width:600px; margin:0 auto 20px;">
     میکروهدف یک اپلیکیشن هدف‌گذاری است که بر پایه فلسفه گشتالت طراحی شده. 
     با تقسیم اهداف بزرگ به قدم‌های کوچک و قابل انجام، 
     یادگیری و رشد شخصی را سریع‌تر و پایدارتر می‌کند.
   </p>
 
-  <a href="https://arkan30.github.io/microgoal/" 
-     target="_blank"
-     style="display:inline-flex; align-items:center; gap:8px; background:#1a4a2e; color:white; padding:12px 30px; border-radius:8px; text-decoration:none; font-size:1rem; margin:10px;">
+  <a href="https://arkan30.github.io/microgoal/" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:#1a4a7a; color:white; padding:12px 30px; border-radius:8px; text-decoration:none; font-size:1rem; margin:10px;">
     🎯 ورود به میکروهدف
   </a>
 
-  <hr style="border:none; border-top:1px solid #c8dcc8; margin:20px auto; max-width:400px;">
+  <hr style="border:none; border-top:1px solid #c8dff0; margin:20px auto; max-width:400px;">
 
   <p style="color:#666; font-size:.95rem; max-width:500px; margin:0 auto 15px;">
     فلسفه و رویکرد دقیق کارم را در وب‌سایت شخصی‌ام بخوانید
   </p>
 
-  <a href="https://arkan30.github.io/Arkan./" 
-     target="_blank"
-     style="display:inline-flex; align-items:center; gap:8px; background:white; color:#1a4a2e; padding:12px 30px; border-radius:8px; text-decoration:none; font-size:1rem; margin:10px; border:2px solid #1a4a2e;">
+  <a href="https://arkan30.github.io/Arkan./" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:white; color:#1a4a7a; padding:12px 30px; border-radius:8px; text-decoration:none; font-size:1rem; margin:10px; border:2px solid #1a4a7a;">
     🌐 Arkan Mahmoudi
   </a>
 </section>
@@ -926,7 +870,7 @@
     <p><strong>ARKAN</strong> | مشاوره و روان‌درمانی</p>
     <p>پاوه، کرمانشاه | همیشه همراه شما برای آرامش و رشد</p>
     <nav>
-      <a href="#hero">خانه</a> | <a href="#services">خدمات</a> | <a href="#about">درباره</a> | <a href="#contact">تماس</a>
+      <a href="https://arkan30.github.io/arkan/#hero">خانه</a> | <a href="https://arkan30.github.io/arkan/#services">خدمات</a> | <a href="https://arkan30.github.io/arkan/#about">درباره</a> | <a href="https://arkan30.github.io/arkan/#contact">تماس</a>
     </nav>
     <p style="margin-top:20px;">© 2025 تمامی حقوق محفوظ است.</p>
   </footer>
@@ -937,24 +881,6 @@
       const preloader = document.getElementById('preloader');
       setTimeout(() => { preloader.style.opacity = '0'; setTimeout(() => preloader.style.display = 'none', 500); }, 800);
     });
-
-   // Live Clock - Iran Time (Asia/Tehran)
-function updateClock() {
-  const now = new Date();
-  const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Tehran' };
-  const timeStr = now.toLocaleTimeString('fa-IR', optionsTime);
-  document.getElementById('liveClock').innerText = timeStr;
-  
-  // نمایش ثانیه به صورت جدا (برای قسمت seconds)
-  const optionsSec = { second: '2-digit', timeZone: 'Asia/Tehran' };
-  const seconds = now.toLocaleTimeString('fa-IR', optionsSec);
-  document.getElementById('liveSeconds').innerText = seconds;
-  
-  const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Tehran' };
-  document.getElementById('liveDate').innerText = now.toLocaleDateString('fa-IR', optionsDate);
-}
-setInterval(updateClock, 1000);
-updateClock();
 
     // Counter animation
     const counters = [
@@ -970,18 +896,22 @@ updateClock();
           if (c.current < c.target) {
             c.current += step;
             if (c.current > c.target) c.current = c.target;
-            document.getElementById(c.id).innerText = c.current;
+            const el = document.getElementById(c.id);
+            if (el) el.innerText = c.current;
           } else clearInterval(interval);
         }, 20);
       });
     }
-    // trigger when stats visible
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { animateCounters(); observer.disconnect(); }
+    // trigger when stats visible (guard in case .stats no longer exists)
+    const statsEl = document.querySelector('.stats');
+    if (statsEl) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { animateCounters(); observer.disconnect(); }
+        });
       });
-    });
-    observer.observe(document.querySelector('.stats'));
+      observer.observe(statsEl);
+    }
 
     // Accordion
     document.querySelectorAll('.acc-btn').forEach(btn => {
@@ -993,14 +923,6 @@ updateClock();
         if(span) span.innerText = body.classList.contains('open') ? '−' : '+';
       });
     });
-
-    // Search google function
-    window.searchGoogle = function() {
-      let query = document.getElementById('searchInput').value.trim();
-      if(query) window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
-      else alert('لطفا عبارت جستجو را وارد کنید');
-    };
-    document.getElementById('searchInput').addEventListener('keypress', function(e) { if(e.key === 'Enter') searchGoogle(); });
 
     // Contact Form
     document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -1041,5 +963,5 @@ updateClock();
     // set default first active
     document.querySelector('nav ul a[href="#hero"]').classList.add('active');
   </script>
-</body>
-</html>
+
+</body></html>
