@@ -959,14 +959,12 @@
       <p>میتوانید سوالات خود را مطرح کنید. در اسرع وقت پاسخگو هستیم</p>
     </div>
     <div class="contact-grid">
-      <div class="form-box">
-        <form id="contactForm">
-          <input type="text" placeholder="نام و نام خانوادگی" id="fullname" required="">
-          <input type="email" placeholder="ایمیل" id="email">
-          <textarea rows="4" placeholder="پیام شما ..." id="msg" required=""></textarea>
-          <button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg> ارسال پیام</button>
-        </form>
-        <p id="formStatus" style="font-size:12px; margin-top:12px; text-align:center; color:#5b9fd6;"></p>
+     <div class="form-box" style="display:flex; flex-direction:column; justify-content:center;">
+        <h3 style="color:#1a4a7a; font-size:20px; margin-bottom:16px;">در تماس باشید</h3>
+        <p style="color:#555; font-size:15px; line-height:2.2;">
+          از گفت‌وگوهای صمیمانه استقبال می‌کنم.<br>
+          اگر موضوعی یا نکته ای ذهنتان را به خودش مشغول کرده، یا صرفاً دوست دارید در ارتباط باشید — خوشحال می‌شوم از شما بشنوم. نیازی به تشریفات نیست.
+        </p>
       </div>
       <div class="contact-info">
         <div class="contact-card"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h5>آدرس</h5><p>پاوه، کرمانشاه، ایران</p></div></div>
@@ -1087,17 +1085,6 @@
         }, 200);
       });
     }
-
-    // Contact Form
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('fullname').value;
-      const msg = document.getElementById('msg').value;
-      if(!name || !msg) { alert('لطفا نام و پیام را وارد کنید'); return; }
-      document.getElementById('formStatus').innerText = `پیام شما ارسال شد، ${name} عزیز. سپاسگزاریم.`;
-      document.getElementById('contactForm').reset();
-      setTimeout(() => document.getElementById('formStatus').innerText = '', 5000);
-    });
 
     // Active nav highlight + smooth scroll
     const sections = document.querySelectorAll('div[id]');
