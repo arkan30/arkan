@@ -900,19 +900,6 @@
       </div>
     </div>
   </div>
-
-  <!-- تأمل گشتالتی -->
-  <div class="reflect-bg">
-    <div class="reflect-inner">
-      <svg class="arkan-mark"><use href="#arkan-mark"></use></svg>
-      <div class="reflect-quote" id="reflectQuote">کل، چیزی بیش از مجموع اجزاست.</div>
-      <button class="reflect-btn" id="reflectBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
-        تأمل بعدی
-      </button>
-    </div>
-  </div>
-
   <!-- مهارت‌ها و تیم -->
   <div class="skills-bg" id="skills">
     <div class="section">
@@ -1067,32 +1054,6 @@
         if(span) span.innerText = body.classList.contains('open') ? '−' : '+';
       });
     });
-
-    // تأمل گشتالتی - نقل‌قول‌های تصادفی
-    const reflectQuotes = [
-      "کل، چیزی بیش از مجموع اجزاست.",
-      "هر قدم کوچک، یک الگوی کامل می‌سازد.",
-      "تغییر از توجه به همین‌جا و همین‌حالا آغاز می‌شود.",
-      "ذهن، الگوها را کامل می‌کند؛ زندگی هم همین‌طور.",
-      "پیشرفت با پرش‌های بزرگ نیست، با گام‌های پیوسته ساخته می‌شود.",
-      "درک یک مسئله، از دیدن کل تصویر شروع می‌شود، نه فقط تکه‌ها."
-    ];
-    let reflectIndex = 0;
-    const reflectEl = document.getElementById('reflectQuote');
-    const reflectBtn = document.getElementById('reflectBtn');
-    if (reflectBtn) {
-      reflectBtn.addEventListener('click', () => {
-        let next;
-        do { next = Math.floor(Math.random() * reflectQuotes.length); } while (next === reflectIndex && reflectQuotes.length > 1);
-        reflectIndex = next;
-        reflectEl.style.opacity = 0;
-        setTimeout(() => {
-          reflectEl.innerText = reflectQuotes[reflectIndex];
-          reflectEl.style.transition = 'opacity 0.3s';
-          reflectEl.style.opacity = 1;
-        }, 200);
-      });
-    }
 
     // Active nav highlight + smooth scroll
     const sections = document.querySelectorAll('div[id]');
