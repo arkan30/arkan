@@ -1089,5 +1089,85 @@
 
     document.querySelector('nav ul a[href="#hero"]').classList.add('active');
   </script>
+<!-- دکمه ورود به مقاله -->
+<div style="text-align:center; margin:40px 0;">
+  <button onclick="document.getElementById('article-modal').style.display='flex'"
+    style="background:#1a3a5c; color:white; padding:14px 35px; border:none; border-radius:8px; font-size:1.1rem; cursor:pointer;">
+    ورود به مقاله روانکاوانه
+  </button>
+</div>
 
+<!-- پنجره مقاله -->
+<div id="article-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:flex-start; overflow-y:auto; padding:20px;">
+  <div style="background:#f8f9fa; max-width:750px; width:100%; border-radius:12px; padding:40px; margin:auto; position:relative; font-family:inherit; direction:rtl;">
+    
+    <!-- دکمه بستن -->
+    <button onclick="document.getElementById('article-modal').style.display='none'"
+      style="position:absolute; top:15px; left:15px; background:#1a3a5c; color:white; border:none; border-radius:50%; width:35px; height:35px; font-size:1.2rem; cursor:pointer;">✕</button>
+
+    <!-- هدر مقاله با عکس لکان -->
+    <div style="display:flex; gap:20px; align-items:flex-start; margin-bottom:30px; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px;">
+        <h2 style="color:#1a3a5c; margin-bottom:10px;">لکان و بازگشت به فروید</h2>
+        <p style="color:#555; font-size:.95rem;">نقشه‌ای برای فهم ذهن انسان</p>
+        <p style="color:#888; font-size:.85rem; font-style:italic;">از علایق اصلی ارکان محمودی، روانشناس و مشاور</p>
+      </div>
+      <div style="width:130px; height:160px; border:2px dashed #1a3a5c; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#1a3a5c; font-size:.8rem; text-align:center; flex-shrink:0;">
+        عکس لکان<br>اینجا
+      </div>
+    </div>
+
+    <!-- متن مقاله -->
+    <p style="color:#333; line-height:2; margin-bottom:20px;">
+      <strong>فروید گفت ناخودآگاه وجود دارد. لکان گفت ناخودآگاه مثل زبان ساختار دارد.</strong><br>
+      این جمله ساده، انقلابی در روانکاوی ایجاد کرد. لکان نه فروید را رد کرد — بلکه او را عمیق‌تر خواند.
+    </p>
+
+    <h3 style="color:#1a3a5c; margin-bottom:15px;">سه ساحت اصلی: واقع، نمادین، خیالی</h3>
+    <p style="color:#333; line-height:2; margin-bottom:10px;"><strong>ساحت خیالی</strong> — جایی که تصویر می‌سازیم از خودمان، از دیگران، از دنیا. این لایه پر از توهم و آرزو است.</p>
+    <p style="color:#333; line-height:2; margin-bottom:10px;"><strong>ساحت نمادین</strong> — دنیای زبان، قانون و فرهنگ. وقتی کودک زبان یاد می‌گیرد، وارد این دنیا می‌شود و برای همیشه تغییر می‌کند.</p>
+    <p style="color:#333; line-height:2; margin-bottom:25px;"><strong>ساحت واقع</strong> — چیزی که نه می‌توان گفت، نه تصور کرد. آن بخشی از تجربه که همیشه از زبان فرار می‌کند.</p>
+
+    <h3 style="color:#1a3a5c; margin-bottom:15px;">مرحله آینه</h3>
+    <p style="color:#333; line-height:2; margin-bottom:25px;">کودک شش تا هجده ماهه برای اولین بار خودش را در آینه می‌بیند. این لحظه تاریخی است — برای اولین بار یک «من» می‌بیند. اما این تصویر یک توهم انسجام است. از همین لحظه، ما عاشق تصویری از خودمان می‌شویم که هرگز کاملاً واقعی نخواهد بود.</p>
+
+    <h3 style="color:#1a3a5c; margin-bottom:15px;">استعاره پدری</h3>
+    <p style="color:#333; line-height:2; margin-bottom:25px;">پدر در روانکاوی لکانی یک شخص نیست — یک کارکرد است. «نه» پدر، کودک را از وابستگی کامل به مادر جدا می‌کند و او را وارد دنیای قانون و زبان می‌کند.</p>
+
+    <h3 style="color:#1a3a5c; margin-bottom:15px;">نمون‌های بصری لکان</h3>
+    <!-- سه کارت بصری -->
+    <div style="display:flex; gap:15px; margin-bottom:25px; flex-wrap:wrap;">
+      
+      <div style="flex:1; min-width:180px; background:white; border:1px solid #dde; border-radius:10px; padding:15px; text-align:center;">
+        <div style="width:100%; height:120px; border:2px dashed #1a3a5c; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#1a3a5c; font-size:.8rem; margin-bottom:10px;">
+          عکس نوار موبیوس
+        </div>
+        <strong style="color:#1a3a5c;">نوار موبیوس</strong>
+        <p style="color:#555; font-size:.85rem; margin-top:8px;">نواری که درون و بیرون ندارد — مثل مرز ذهن و دنیا</p>
+      </div>
+
+      <div style="flex:1; min-width:180px; background:white; border:1px solid #dde; border-radius:10px; padding:15px; text-align:center;">
+        <div style="width:100%; height:120px; border:2px dashed #1a3a5c; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#1a3a5c; font-size:.8rem; margin-bottom:10px;">
+          عکس بطری کلاین
+        </div>
+        <strong style="color:#1a3a5c;">بطری کلاین</strong>
+        <p style="color:#555; font-size:.85rem; margin-top:8px;">ظرفی که درون و بیرون ندارد — تصویری از سوژه</p>
+      </div>
+
+      <div style="flex:1; min-width:180px; background:white; border:1px solid #dde; border-radius:10px; padding:15px; text-align:center;">
+        <div style="width:100%; height:120px; border:2px dashed #1a3a5c; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#1a3a5c; font-size:.8rem; margin-bottom:10px;">
+          عکس گره برومه
+        </div>
+        <strong style="color:#1a3a5c;">گره برومه</strong>
+        <p style="color:#555; font-size:.85rem; margin-top:8px;">سه حلقه به هم وابسته — سه ساحت لکان</p>
+      </div>
+
+    </div>
+
+    <p style="color:#888; font-size:.85rem; text-align:center; border-top:1px solid #dde; padding-top:15px;">
+      ارکان محمودی — مشاور و روانشناس، پاوه، کرمانشاه
+    </p>
+
+  </div>
+</div>
 </body></html>
