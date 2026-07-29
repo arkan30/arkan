@@ -1412,7 +1412,8 @@
       });
     });
 
-    document.querySelector('nav ul a[href="#hero"]').classList.add('active');
+    const heroLink = document.querySelector('nav ul a[href$="#hero"]');
+if (heroLink) heroLink.classList.add('active');
     // دکمه همبرگری موبایل
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileMenu = document.getElementById('mobile-menu');
