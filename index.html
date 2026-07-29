@@ -802,16 +802,34 @@
 
     .mobile-menu a {
       text-decoration: none;
-      color: #333;
-      font-size: 14px;
-      padding: 12px 15px;
+      color: #1a4a7a;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 15px;
       border-radius: 8px;
       transition: 0.2s;
+      border-bottom: 1px solid #eef4fb;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
     }
 
     .mobile-menu a:hover {
       background: #f0f7ff;
-      color: #1a4a7a;
+    }
+
+    .mobile-menu a.mobile-register {
+      background: #1a4a7a;
+      color: white !important;
+      border-radius: 50px;
+      text-align: center;
+      margin-top: 8px;
+      border-bottom: none;
+    }
+
+    .mobile-menu a.mobile-register:hover {
+      background: #2e6fad;
     }
 
     @media(max-width:768px) {
@@ -866,7 +884,7 @@
   <a href="#services">خدمات</a>
   <a href="#skills">مهارت‌ها</a>
   <a href="#" id="mobile-article-link">مقاله</a>
-  <a href="#microgoal-promo">میکرو هدف</a>
+  <a href="#microgoal-promo" class="mobile-register">میکرو هدف</a>
 </div>
     <div class="header-inner">
       <div class="logo">
