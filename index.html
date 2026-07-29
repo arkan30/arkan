@@ -781,11 +781,48 @@
       border-radius: 3px;
     }
 
+    /* پنل منوی کشویی موبایل */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 65px;
+      left: 15px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(26,74,122,0.2);
+      padding: 10px;
+      z-index: 999;
+      min-width: 180px;
+      flex-direction: column;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      padding: 12px 15px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    .mobile-menu a:hover {
+      background: #f0f7ff;
+      color: #1a4a7a;
+    }
+
     @media(max-width:768px) {
       .hamburger { display: flex; }
       nav ul { display: none; }
       .hero h2 { font-size: 26px; }
       .photo-slot { width: 100px; height: 100px; }
+    }
+
+    @media(min-width:769px) {
+      .mobile-menu { display: none !important; }
     }
 
   </style>
@@ -818,6 +855,19 @@
 
   <!-- هدر -->
   <header>
+    <button class="hamburger" id="hamburger-btn" aria-label="باز کردن منو">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#hero">خانه</a>
+  <a href="#services">خدمات</a>
+  <a href="#skills">مهارت‌ها</a>
+  <a href="#" id="mobile-article-link">مقاله</a>
+  <a href="#microgoal-promo">میکرو هدف</a>
+</div>
     <div class="header-inner">
       <div class="logo">
         <svg class="arkan-mark"><use href="#arkan-mark"></use></svg>
@@ -1363,6 +1413,35 @@
     });
 
     document.querySelector('nav ul a[href="#hero"]').classList.add('active');
+    // دکمه همبرگری موبایل
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburgerBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+
+document.querySelectorAll('.mobile-menu a:not(#mobile-article-link)').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    mobileMenu.classList.remove('open');
+  });
+});
+
+document.getElementById('mobile-article-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('lacan-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  mobileMenu.classList.remove('open');
+});
+
+document.addEventListener('click', (e) => {
+  if (!hamburgerBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+    mobileMenu.classList.remove('open');
+  }
+});
   </script>
 
 
