@@ -18,6 +18,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arkan30.github.io/arkan/">
   <meta property="og:locale" content="fa_IR">
+  <meta property="og:image" content="https://arkan30.github.io/arkan/arkan.jpg">
+  <meta property="og:image:alt" content="ارکان محمودی - مشاور و روان‌درمانگر">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arkan Mahmoudi | ارکان محمودی - مشاوره و روان‌درمانی">
+  <meta name="twitter:description" content="ارکان محمودی - مشاور مدرسه و روانشناس در پاوه، کرمانشاه. مشاوره فردی، CBT و روانشناسی تحلیلی.">
+  <meta name="twitter:image" content="https://arkan30.github.io/arkan/arkan.jpg">
 
   <!-- Structured Data برای شناسایی بهتر توسط گوگل -->
   <script type="application/ld+json">
@@ -37,10 +45,9 @@
   }
   </script>
 
-  <link href="./main main_files/css2" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-  <link href="./main main_files/css2(1)" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -116,7 +123,7 @@
 
     .logo .arkan-mark { width: 30px; height: 30px; color: #1a4a7a; }
 
-    .logo h1 {
+    .logo .brand-name {
       font-family: 'Poppins', sans-serif;
       font-size: 26px;
       font-weight: 700;
@@ -217,7 +224,7 @@
 
     .hero-badge .arkan-mark { width: 14px; height: 14px; }
 
-    .hero h2 {
+    .hero h1 {
       font-family: 'Vazirmatn', sans-serif;
       font-weight: 800;
       font-size: 44px;
@@ -355,9 +362,17 @@
       cursor: pointer;
     }
 
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(26,74,122,0.12);
+    @media (hover: hover) and (pointer: fine) {
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(26,74,122,0.12);
+        border-color: #5b9fd6;
+      }
+    }
+
+    .service-card:active {
+      transform: translateY(-4px) scale(0.99);
+      box-shadow: 0 10px 25px rgba(26,74,122,0.15);
       border-color: #5b9fd6;
     }
 
@@ -369,7 +384,7 @@
       display: block;
     }
 
-    .service-card h4 {
+    .service-card h3 {
       color: #1a4a7a;
       font-size: 16px;
       font-weight: 700;
@@ -459,15 +474,20 @@
     .acc-btn.active { background: #1a4a7a; color: white; }
 
     .acc-body {
-      display: none;
-      padding: 15px 20px;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
       background: #f8fbff;
       color: #666;
       font-size: 13px;
       line-height: 2;
+      transition: max-height 0.35s ease, padding 0.35s ease;
     }
 
-    .acc-body.open { display: block; }
+    .acc-body.open {
+      max-height: 600px;
+      padding: 15px 20px;
+    }
 
     /* ===== تأمل گشتالتی ===== */
     .reflect-bg { background: white; border-top: 1px solid #e8f0f8; border-bottom: 1px solid #e8f0f8; }
@@ -535,7 +555,14 @@
       transition: 0.3s;
     }
 
-    .team-card:hover {
+    @media (hover: hover) and (pointer: fine) {
+      .team-card:hover {
+        border-color: #5b9fd6;
+        box-shadow: 0 8px 25px rgba(26,74,122,0.1);
+      }
+    }
+
+    .team-card:active {
       border-color: #5b9fd6;
       box-shadow: 0 8px 25px rgba(26,74,122,0.1);
     }
@@ -554,7 +581,7 @@
 
     .team-avatar svg { width: 30px; height: 30px; }
 
-    .team-info h4 { color: #1a4a7a; font-size: 16px; margin-bottom: 4px; }
+    .team-info h3 { color: #1a4a7a; font-size: 16px; margin-bottom: 4px; }
     .team-info p { color: #888; font-size: 12px; }
 
     .skill-box { margin-bottom: 18px; }
@@ -750,16 +777,38 @@
       margin: 0 12px;
       font-size: 12px;
       transition: 0.2s;
+      display: inline-block;
+      padding: 4px 0;
     }
 
     footer nav a:hover { color: white; }
+
+    footer nav .footer-divider {
+      color: rgba(255,255,255,0.25);
+      margin: 0 2px;
+    }
+
+    /* ===== خوانایی موبایل: فونت‌های ریز کارت‌ها و فوتر ===== */
+    @media(max-width:600px) {
+      .service-card p,
+      .contact-card p,
+      .team-info p { font-size: 14px; }
+
+      footer nav a {
+        font-size: 14px;
+        margin: 0 10px;
+        padding: 6px 2px;
+      }
+
+      footer nav .footer-divider { margin: 0 4px; }
+    }
 
     /* ===== منوی موبایل ===== */
     .hamburger {
       display: none;
       position: fixed;
       top: 15px;
-      left: 15px;
+      right: 15px;
       z-index: 1000;
       background: #1a4a7a;
       border: none;
@@ -779,14 +828,20 @@
       height: 2px;
       background: white;
       border-radius: 3px;
+      transition: 0.3s;
     }
+
+    /* حالت باز: تبدیل به ضربدر تا کاربر حس گم‌شدگی نکنه و بفهمه راه بستن منو کجاست */
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* پنل منوی کشویی موبایل */
     .mobile-menu {
       display: none;
       position: fixed;
       top: 65px;
-      left: 15px;
+      right: 15px;
       background: white;
       border-radius: 12px;
       box-shadow: 0 8px 30px rgba(26,74,122,0.2);
@@ -832,27 +887,68 @@
       background: #2e6fad;
     }
 
-    @media(max-width:768px) {
+    .mobile-menu-btn {
+      all: unset;
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      text-align: right;
+      cursor: pointer;
+      font-family: inherit;
+      text-decoration: none;
+      color: #1a4a7a;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 15px;
+      border-radius: 8px;
+      transition: 0.2s;
+      border-bottom: 1px solid #eef4fb;
+    }
+
+    .mobile-menu-btn:hover { background: #f0f7ff; }
+
+    @media(max-width:1000px) {
       .hamburger { display: flex; }
       nav ul { display: none; }
-      .hero h2 { font-size: 26px; }
+    }
+
+    @media(max-width:768px) {
+      .hero h1 { font-size: 26px; }
       .photo-slot { width: 100px; height: 100px; }
     }
 
-    @media(min-width:769px) {
+    @media(min-width:1001px) {
       .mobile-menu { display: none !important; }
     }
 
+    /* ===== دکمه بازگشت به بالا ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      width: 46px;
+      height: 46px;
+      background: #1a4a7a;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(26,74,122,0.35);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: 0.3s;
+      z-index: 500;
+    }
+
+    .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: #2e6fad; }
+    .back-to-top:active { transform: scale(0.92); }
+
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Arkan Mahmoudi",
-  "jobTitle": "روانشناس و مشاور",
-  "url": "https://arkan30.github.io/arkan/"
-}
-</script>
 </head>
 <body>
 
@@ -880,20 +976,20 @@
 </button>
 
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#hero">خانه</a>
-  <a href="#services">خدمات</a>
-  <a href="#skills">مهارت‌ها</a>
-  <a href="#" id="mobile-article-link">مقاله</a>
-  <a href="#microgoal-promo" class="mobile-register">میکرو هدف</a>
+  <a href="https://arkan30.github.io/arkan/#hero">خانه</a>
+  <a href="https://arkan30.github.io/arkan/#services">خدمات</a>
+  <a href="https://arkan30.github.io/arkan/#skills">مهارت‌ها</a>
+  <button type="button" class="mobile-menu-btn" id="mobile-article-link">مقاله</button>
+  <a href="https://arkan30.github.io/arkan/#microgoal-promo" class="mobile-register">میکرو هدف</a>
 </div>
     <div class="header-inner">
       <div class="logo">
         <svg class="arkan-mark"><use href="#arkan-mark"></use></svg>
-        <h1>ARK<span>AN</span></h1>
+        <span class="brand-name" role="heading" aria-level="2">ARK<span>AN</span></span>
       </div>
       <nav>
         <ul>
-          <li><a href="https://arkan30.github.io/arkan/#hero" class="">خانه</a></li>
+          <li><a href="https://arkan30.github.io/arkan/#hero" class="active">خانه</a></li>
           <li><a href="https://arkan30.github.io/arkan/#services">خدمات</a></li>
           <li><a href="https://arkan30.github.io/arkan/#about">درباره من</a></li>
           <li><a href="https://arkan30.github.io/arkan/#skills">مهارت‌ها</a></li>
@@ -904,11 +1000,17 @@
     </div>
   </header>
 
+  <button class="back-to-top" id="back-to-top" aria-label="بازگشت به بالای صفحه">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+
+  <main>
+
   <!-- بنر اصلی -->
-  <div class="hero" id="hero">
+  <section class="hero" id="hero">
     <div class="hero-content">
       <div class="hero-badge"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> ARKAN | روانشناسی · مشاوره · روان‌درمانی</div>
-      <h2>من ارکان محمودی هستم</h2>
+      <h1>ارکان محمودی — مشاور مدرسه و روانشناس در پاوه، کرمانشاه</h1>
       <p>
         روانشناس و مشاور، این فضا رو ساختم که درک بهتری از روانشناسی برای بقیه فراهم کنم،
         اینجا درباره آدم های واقعی ، مشکلات واقعی و راه حل های کاربردی صحبت میکنیم،
@@ -919,9 +1021,9 @@
         <a href="https://arkan30.github.io/arkan/#about" class="btn-ghost">بیشتر بدانید</a>
       </div>
     </div>
-  </div>
+  </section>
   <!-- خدمات -->
-  <div class="services-bg" id="services">
+  <section class="services-bg" id="services">
     <div class="section">
       <div class="section-head">
         <span class="eyebrow"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> آنچه ارائه می‌دهیم</span>
@@ -931,22 +1033,22 @@
       <div class="services-grid">
         <div class="service-card">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5a3.5 3.5 0 0 0-3.4 4.3A3.5 3.5 0 0 0 4 10a3.5 3.5 0 0 0 1.6 6 3.5 3.5 0 0 0 3.9 3.5 3.5 3.5 0 0 0 6 0A3.5 3.5 0 0 0 19.4 16 3.5 3.5 0 0 0 21 10a3.5 3.5 0 0 0-2.1-3.2A3.5 3.5 0 0 0 15.5 2.5a3.3 3.3 0 0 0-3 2 3.3 3.3 0 0 0-3-2Z"></path><path d="M12 4.5v15"></path></svg>
-          <h4>مشاوره روانشناسی</h4>
+          <h3>مشاوره روانشناسی</h3>
           <p>مشاوره فردی، خانوادگی و تحصیلی با رویکرد علمی و انسانی برای بهبود کیفیت زندگی</p>
           <a href="https://arkan30.github.io/arkan/#contact" class="btn-read">بیشتر بدانید</a>
         </div>
         <div class="service-card">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6c0-2.6-2.1-4.6-4.6-4.6-1.6 0-3 .8-3.8 2-.8-1.2-2.2-2-3.8-2-2.5 0-4.6 2-4.6 4.6 0 5.2 8.4 10.9 8.4 10.9s8.4-5.7 8.4-10.9Z"></path><path d="M8.5 12h2l1.3-2.2L13 14l1.2-2h1.8"></path></svg>
-          <h4>روان‌درمانی</h4>
+          <h3>روان‌درمانی</h3>
           <p>جلسات درمانی تخصصی برای کاهش اضطراب، افسردگی و مشکلات روحی با رویکرد نوین</p>
           <a href="https://arkan30.github.io/arkan/#contact" class="btn-read">بیشتر بدانید</a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- درباره من -->
-<div class="section" id="about" style="background-image:linear-gradient(rgba(255,255,255,0.87), rgba(255,255,255,0.87)), url(&#39;bg-about.jpg&#39;); background-size:cover; background-position:center; border-radius:20px;">    <div class="about-grid">
+<section class="section" id="about" style="background-image:linear-gradient(rgba(255,255,255,0.87), rgba(255,255,255,0.87)), url(&#39;bg-about.jpg&#39;); background-size:cover; background-position:center; border-radius:20px;">    <div class="about-grid">
 <div class="about-visual" style="background:rgba(255,255,255,0.5);">        <svg viewBox="0 0 24 24" fill="none" stroke="#1a4a7a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:70px; height:70px;">
           <circle cx="12" cy="7.5" r="4"></circle>
           <path d="M4.5 21c0-4 3.4-7 7.5-7s7.5 3 7.5 7"></path>
@@ -977,9 +1079,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <!-- مهارت‌ها و تیم -->
-  <div class="skills-bg" id="skills">
+  <section class="skills-bg" id="skills">
     <div class="section">
       <div class="section-head">
         <span class="eyebrow"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> تخصص و همراهان</span>
@@ -990,11 +1092,11 @@
         <div class="team-cards">
           <div class="team-card">
             <div class="team-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"></path></svg></div>
-            <div class="team-info"><h4>ارکان محمودی </h4><p>مشاور   </p></div>
+            <div class="team-info"><h3>ارکان محمودی </h3><p>مشاور   </p></div>
           </div>
           <div class="team-card">
             <div class="team-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"></path></svg></div>
-            <div class="team-info"><h4>سارینا کارگر</h4><p>منشی </p></div>
+            <div class="team-info"><h3>سارینا کارگر</h3><p>منشی </p></div>
           </div>
         </div>
         <div>
@@ -1005,27 +1107,27 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- عکس‌ها -->
- <div class="photos-bg" style="background-image:linear-gradient(rgba(26,74,122,0.55), rgba(26,74,122,0.55)), url(&#39;bg-team.jpg&#39;); background-size:cover; background-position:center;">
+ <section class="photos-bg" style="background-image:linear-gradient(rgba(26,74,122,0.72), rgba(26,74,122,0.72)), url(&#39;bg-team.jpg&#39;); background-size:cover; background-position:center;">
     <div class="photos-inner">
       <p>تیم ما</p>
       <div class="photos-row">
         <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
-          <div class="photo-slot"><img src="arkan.jpg" alt="ارکان محمودی"></div>
-          <span style="font-size:13px; letter-spacing:1px; color:rgba(255,255,255,0.85);">Arkan Mahmoudi</span>
+          <div class="photo-slot"><img src="./Arkan Mahmoudi _ ارکان محمودی - مشاوره و روان_درمانی_files/arkan.jpg" alt="ارکان محمودی"></div>
+          <span style="font-size:13px; letter-spacing:1px; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,0.5);">Arkan Mahmoudi</span>
         </div>
         <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
-          <div class="photo-slot"><img src="sarina.jpg" alt="سارینا"></div>
-          <span style="font-size:13px; letter-spacing:1px; color:rgba(255,255,255,0.85);">Sarina Kargar</span>
+          <div class="photo-slot"><img src="./Arkan Mahmoudi _ ارکان محمودی - مشاوره و روان_درمانی_files/sarina.jpg" alt="سارینا"></div>
+          <span style="font-size:13px; letter-spacing:1px; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,0.5);">Sarina Kargar</span>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- تماس با ما -->
-  <div class="section" id="contact">
+  <section class="section" id="contact">
     <div class="section-head">
       <span class="eyebrow"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> با ما در تماس باشید</span>
       <h2>ارسال پیام</h2>
@@ -1043,8 +1145,7 @@
 
         <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
           <span style="color:#1a4a7a; font-size:14px; font-weight:600;">ورود به مقاله روانکاوانه</span>
-          <button id="lacan-open-btn" onclick="document.getElementById('lacan-modal').classList.add('open'); document.body.style.overflow='hidden';"
-            class="lacan-trigger-btn">
+          <button id="lacan-open-btn" onclick="document.getElementById(&#39;lacan-modal&#39;).classList.add(&#39;open&#39;); document.body.style.overflow=&#39;hidden&#39;;" class="lacan-trigger-btn">
             Visit
           </button>
         </div>
@@ -1056,7 +1157,7 @@
         <div class="contact-card"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></div><div><h5>ساعت کاری</h5><p>شنبه تا چهارشنبه ۹ الی ۱۸</p></div></div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ============================================================
        مقاله روانکاوانه: لکان و بازگشت به فروید (مدال — دکمه‌اش داخل کارت «در تماس باشید»ست)
@@ -1130,7 +1231,7 @@
       padding-bottom:30px;
       margin-bottom:40px;
     }
-    .lacan-header h1{
+    .lacan-header h2{
       color:#f2ede0;
       font-size:2.1rem;
       line-height:1.3;
@@ -1164,7 +1265,7 @@
     }
     .lacan-body strong{ color:#f2ede0; }
 
-    .lacan-body h2{
+    .lacan-body h3{
       color:#c9a961;
       font-size:1.15rem;
       font-weight:400;
@@ -1245,7 +1346,7 @@
   </style>
 
   <div id="lacan-modal">
-    <button class="lacan-close" onclick="document.getElementById('lacan-modal').classList.remove('open'); document.body.style.overflow='';">✕</button>
+    <button class="lacan-close" onclick="document.getElementById(&#39;lacan-modal&#39;).classList.remove(&#39;open&#39;); document.body.style.overflow=&#39;&#39;;">✕</button>
 
     <div class="lacan-wrap">
 
@@ -1253,7 +1354,7 @@
         <div class="lacan-portrait"></div>
         <div>
           <div class="lacan-eyebrow">روانکاوی · نظریه</div>
-          <h1>لکان و بازگشت به فروید</h1>
+          <h2>لکان و بازگشت به فروید</h2>
           <p>سه ساحت ذهن — واقع، نمادین، خیالی</p>
         </div>
       </div>
@@ -1263,7 +1364,7 @@
         <p><strong>لکان شعار خودش را «بازگشت به فروید» نامید — نه بازگشتی به گذشته.</strong><br>
          بلکه خواندنِ دوباره‌ی فروید از دل زبان‌شناسی و فلسفه، آنجا که خودِ فروید هنوز واژه‌ای برایش نداشت. حاصل این بازخوانی، ادعایی بود که روانکاوی را برای همیشه دگرگون کرد: ناخودآگاه مثل زبان ساختار دارد.
 
-        <h2>سه ساحت: خیالی، نمادین، واقع</h2>
+        </p><h3>سه ساحت: خیالی، نمادین، واقع</h3>
 
         <p><strong>ساحت خیالی</strong> — قلمروِ تصویر و همانندسازی؛ جایی که «من» از انعکاسِ خود و دیگری صورت می‌بندد، اما این صورت‌بندی همواره با آرزو و توهمِ یکپارچگی آمیخته است.
 .</p>
@@ -1274,26 +1375,25 @@
         <p><strong>ساحت واقع</strong> — آن‌چه از نمادین‌سازی می‌گریزد؛ نقطه‌ای بی‌نام و بی‌تصویر که هیچ زبانی توان دربرگرفتنش را ندارد، اما همان‌جاست که خود را در شکاف‌ها و لغزش‌های سخن نشان می‌دهد.
 .</p>
 
-        <h2>مرحله آینه</h2>
+        <h3>مرحله آینه</h3>
 
         <p>
 بین شش تا هجده ماهگی، کودک برای اولین بار تصویر خود را در آینه می‌شناسد و از این شناخت، لذتی می‌برد که لکان آن را «سرخوشی» می‌نامد. اما این شناسایی بر پایه‌ی یک بدفهمی بنیادین استوار است: تصویری منسجم و کامل، در برابر تجربه‌ی واقعی از تنی پراکنده و ناهماهنگ. از همین شکاف، «من» متولد می‌شود — همیشه دلبسته‌ی تصویری که هرگز کاملاً با آن یکی نخواهد شد.
 .</p>
 
-        <h2>استعاره‌ی پدری</h2>
+        <h3>استعاره‌ی پدری</h3>
 
         <p>
 در خوانش لکان، پدر پیش از هر چیز یک کارکرد است، نه یک شخص. «نه»ی پدرانه است که کودک را از همجوشی مطلق با مادر جدا می‌کند و او را به نظمِ نمادین — به زبان، قانون و میل — وارد می‌سازد؛ گذاری که هم دردناک است و هم بنیان‌گذارِ سوژگی.
-      </div>
+      </p></div>
 
-      <h2 style="color:#c9a961; font-size:1.15rem; font-weight:400; letter-spacing:.04em; padding-right:16px; border-right:2px solid #c9a961; margin-bottom:20px;">نمادهای بصری لکان</h2>
+      <h3 style="color:#c9a961; font-size:1.15rem; font-weight:400; letter-spacing:.04em; padding-right:16px; border-right:2px solid #c9a961; margin-bottom:20px;">نمادهای بصری لکان</h3>
 
       <div class="lacan-cards">
 
         <div class="lacan-card">
           <svg viewBox="0 0 100 60" fill="none">
-            <path class="path-draw" d="M15,30 C15,15 35,15 50,30 C65,45 85,45 85,30 C85,15 65,15 50,30 C35,45 15,45 15,30 Z"
-              stroke="#c9a961" stroke-width="1.6"/>
+            <path class="path-draw" d="M15,30 C15,15 35,15 50,30 C65,45 85,45 85,30 C85,15 65,15 50,30 C35,45 15,45 15,30 Z" stroke="#c9a961" stroke-width="1.6"></path>
           </svg>
           <strong>نوار موبیوس</strong>
           <p>نواری که درون و بیرون ندارد — استعاره‌ای از مرز مبهم میان ذهن و جهان</p>
@@ -1307,9 +1407,9 @@
 
         <div class="lacan-card">
           <svg viewBox="0 0 100 60" fill="none">
-            <circle class="path-draw" cx="38" cy="24" r="16" stroke="#c9a961" stroke-width="1.6"/>
-            <circle class="path-draw" cx="58" cy="24" r="16" stroke="#c9a961" stroke-width="1.6" style="animation-delay:.3s;"/>
-            <circle class="path-draw" cx="48" cy="42" r="16" stroke="#c9a961" stroke-width="1.6" style="animation-delay:.6s;"/>
+            <circle class="path-draw" cx="38" cy="24" r="16" stroke="#c9a961" stroke-width="1.6"></circle>
+            <circle class="path-draw" cx="58" cy="24" r="16" stroke="#c9a961" stroke-width="1.6" style="animation-delay:.3s;"></circle>
+            <circle class="path-draw" cx="48" cy="42" r="16" stroke="#c9a961" stroke-width="1.6" style="animation-delay:.6s;"></circle>
           </svg>
           <strong>گره برومه‌ای</strong>
           <p>سه حلقه‌ی به‌هم‌وابسته — واقع، نمادین و خیالی که هیچ‌کدام بدون دیگری معنا ندارد</p>
@@ -1334,7 +1434,7 @@
 
   <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
 
-    <a href="app-release-apk.zip" download style="display:inline-flex; align-items:center; gap:8px; background:#1a4a7a; color:white; padding:10px 24px; border-radius:8px; text-decoration:none; font-size:.9rem;">
+    <a href="https://arkan30.github.io/arkan/app-release-apk.zip" download="" style="display:inline-flex; align-items:center; gap:8px; background:#1a4a7a; color:white; padding:10px 24px; border-radius:8px; text-decoration:none; font-size:.9rem;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
       دانلود اپ (zip)
     </a>
@@ -1357,6 +1457,8 @@
     Arkan Mahmoudi
   </a>
 </section>
+  </main>
+
   <footer>
     <div class="footer-brand">
       <svg class="arkan-mark"><use href="#arkan-mark"></use></svg>
@@ -1365,7 +1467,7 @@
     <p>مشاوره و روان‌درمانی</p>
     <p>پاوه، کرمانشاه | همیشه همراه شما برای آرامش و رشد</p>
     <nav>
-      <a href="https://arkan30.github.io/arkan/#hero">خانه</a> | <a href="https://arkan30.github.io/arkan/#services">خدمات</a> | <a href="https://arkan30.github.io/arkan/#about">درباره</a> | <a href="https://arkan30.github.io/arkan/#contact">تماس</a>
+      <a href="https://arkan30.github.io/arkan/#hero">خانه</a><span class="footer-divider">|</span><a href="https://arkan30.github.io/arkan/#services">خدمات</a><span class="footer-divider">|</span><a href="https://arkan30.github.io/arkan/#about">درباره</a><span class="footer-divider">|</span><a href="https://arkan30.github.io/arkan/#contact">تماس</a>
     </nav>
     <p style="margin-top:20px;">© 2025 تمامی حقوق محفوظ است.</p>
   </footer>
@@ -1419,7 +1521,7 @@
     });
 
     // Active nav highlight + smooth scroll
-    const sections = document.querySelectorAll('div[id]');
+    const sections = document.querySelectorAll('section[id], div[id]');
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
@@ -1450,6 +1552,7 @@ const mobileMenu = document.getElementById('mobile-menu');
 
 hamburgerBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('open');
+  hamburgerBtn.classList.toggle('active');
 });
 
 document.querySelectorAll('.mobile-menu a:not(#mobile-article-link)').forEach(link => {
@@ -1458,6 +1561,7 @@ document.querySelectorAll('.mobile-menu a:not(#mobile-article-link)').forEach(li
     const target = document.querySelector(link.getAttribute('href'));
     if (target) target.scrollIntoView({ behavior: 'smooth' });
     mobileMenu.classList.remove('open');
+    hamburgerBtn.classList.remove('active');
   });
 });
 
@@ -1466,14 +1570,29 @@ document.getElementById('mobile-article-link').addEventListener('click', (e) => 
   document.getElementById('lacan-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
   mobileMenu.classList.remove('open');
+  hamburgerBtn.classList.remove('active');
 });
 
 document.addEventListener('click', (e) => {
   if (!hamburgerBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
     mobileMenu.classList.remove('open');
+    hamburgerBtn.classList.remove('active');
   }
 });
+
+// دکمه بازگشت به بالا
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) backToTopBtn.classList.add('show');
+    else backToTopBtn.classList.remove('show');
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
   </script>
+
 
 
 </body></html>
