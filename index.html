@@ -52,6 +52,8 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Vazirmatn', Tahoma, sans-serif;
       background: #f8f9fa;
@@ -60,6 +62,14 @@
 
     h1, h2, h3, h4, h5 {
       font-family: 'Vazirmatn', 'Poppins', sans-serif;
+    }
+
+    /* دسترسی‌پذیری: حالت فوکوس واضح برای ناوبری با کیبورد */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid #5b9fd6;
+      outline-offset: 3px;
+      border-radius: 4px;
     }
 
     /* ===== پری‌لودر ===== */
@@ -277,33 +287,6 @@
       background: rgba(255,255,255,0.1);
       border-color: white;
     }
-
-    /* ===== آمار ===== */
-    .stats {
-      background: white;
-      padding: 50px 30px;
-      border-bottom: 1px solid #e8f0f8;
-    }
-
-    .stats-grid {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      text-align: center;
-    }
-
-    @media(max-width:600px) { .stats-grid { grid-template-columns: repeat(2,1fr); } }
-
-    .stat-item h3 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 40px;
-      font-weight: 700;
-      color: #1a4a7a;
-    }
-
-    .stat-item p { color: #888; font-size: 13px; margin-top: 5px; }
 
     /* ===== بخش‌ها ===== */
     .section {
@@ -913,7 +896,12 @@
     }
 
     @media(max-width:768px) {
+      .hero { padding: 70px 20px; }
       .hero h1 { font-size: 26px; }
+      .section { padding: 55px 20px; }
+      .section-head { margin-bottom: 35px; }
+      .section-head h2 { font-size: 24px; }
+      header { padding: 0 16px; }
       .photo-slot { width: 100px; height: 100px; }
     }
 
@@ -1009,7 +997,7 @@
   <!-- بنر اصلی -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-badge"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> ARKAN | روانشناسی · مشاوره · روان‌درمانی</div>
+      <div class="hero-badge"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> ARKAN | روانشناسی · مشاوره مدرسه · برنامه‌نویسی</div>
       <h1>ارکان محمودی — مشاور مدرسه و روانشناس در پاوه، کرمانشاه</h1>
       <p>
         روانشناس و مشاور، این فضا رو ساختم که درک بهتری از روانشناسی برای بقیه فراهم کنم،
@@ -1017,7 +1005,7 @@
         بدون پیچیدگی های غیر ضروری
       </p>
       <div class="hero-btns">
-        <a href="https://arkan30.github.io/arkan/#services" class="btn-main">خدمات ما</a>
+        <a href="https://arkan30.github.io/arkan/#services" class="btn-main">حوزه‌های فعالیتم</a>
         <a href="https://arkan30.github.io/arkan/#about" class="btn-ghost">بیشتر بدانید</a>
       </div>
     </div>
@@ -1026,21 +1014,21 @@
   <section class="services-bg" id="services">
     <div class="section">
       <div class="section-head">
-        <span class="eyebrow"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> آنچه ارائه می‌دهیم</span>
-        <h2>خدمات ما</h2>
-        <p>از مشاوره روانشناسی </p>
+        <span class="eyebrow"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> علاقه‌مندی‌های من</span>
+        <h2>حوزه‌هایی که دنبال می‌کنم</h2>
+        <p>چیزهایی که این روزها بیشتر وقتم رو صرف یادگیری و کار روی‌شون می‌کنم</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5a3.5 3.5 0 0 0-3.4 4.3A3.5 3.5 0 0 0 4 10a3.5 3.5 0 0 0 1.6 6 3.5 3.5 0 0 0 3.9 3.5 3.5 3.5 0 0 0 6 0A3.5 3.5 0 0 0 19.4 16 3.5 3.5 0 0 0 21 10a3.5 3.5 0 0 0-2.1-3.2A3.5 3.5 0 0 0 15.5 2.5a3.3 3.3 0 0 0-3 2 3.3 3.3 0 0 0-3-2Z"></path><path d="M12 4.5v15"></path></svg>
           <h3>مشاوره روانشناسی</h3>
-          <p>مشاوره فردی، خانوادگی و تحصیلی با رویکرد علمی و انسانی برای بهبود کیفیت زندگی</p>
+          <p>علاقه‌مندم به مشاوره فردی، خانوادگی و تحصیلی، با نگاهی علمی و انسانی به آدم‌ها و مسائل واقعی‌شون</p>
           <a href="https://arkan30.github.io/arkan/#contact" class="btn-read">بیشتر بدانید</a>
         </div>
         <div class="service-card">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6c0-2.6-2.1-4.6-4.6-4.6-1.6 0-3 .8-3.8 2-.8-1.2-2.2-2-3.8-2-2.5 0-4.6 2-4.6 4.6 0 5.2 8.4 10.9 8.4 10.9s8.4-5.7 8.4-10.9Z"></path><path d="M8.5 12h2l1.3-2.2L13 14l1.2-2h1.8"></path></svg>
-          <h3>روان‌درمانی</h3>
-          <p>جلسات درمانی تخصصی برای کاهش اضطراب، افسردگی و مشکلات روحی با رویکرد نوین</p>
+          <h3>یادگیری روان‌درمانی</h3>
+          <p>در حال مطالعه و یادگیری عمیق‌تر رویکردهایی مثل CBT هستم، با تمرکز روی اضطراب و افسردگی</p>
           <a href="https://arkan30.github.io/arkan/#contact" class="btn-read">بیشتر بدانید</a>
         </div>
       </div>
@@ -1084,22 +1072,23 @@
   <section class="skills-bg" id="skills">
     <div class="section">
       <div class="section-head">
-        <span class="eyebrow"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> تخصص و همراهان</span>
-        <h2>مهارت‌ها و تیم</h2>
-        <p>تجربه و تخصص در کنار تیم کوچک اما حرفه‌ای</p>
+        <span class="eyebrow"><svg class="arkan-mark"><use href="#arkan-mark"></use></svg> یادگیری و همراهی</span>
+        <h2>مهارت‌ها و همراهان</h2>
+        <p>بخشی از علاقه‌مندی‌هام و آدم‌هایی که این مسیر رو کنارم هستن</p>
       </div>
       <div class="skills-grid">
         <div class="team-cards">
           <div class="team-card">
             <div class="team-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"></path></svg></div>
-            <div class="team-info"><h3>ارکان محمودی </h3><p>مشاور   </p></div>
+            <div class="team-info"><h3>ارکان محمودی</h3><p>مشاور مدرسه</p></div>
           </div>
           <div class="team-card">
             <div class="team-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"></path></svg></div>
-            <div class="team-info"><h3>سارینا کارگر</h3><p>منشی </p></div>
+            <div class="team-info"><h3>سارینا کارگر</h3><p>همکار</p></div>
           </div>
         </div>
         <div>
+          <p style="color:#888; font-size:13px; margin-bottom:16px; line-height:1.9;">یه نمای تقریبی از میزان علاقه و مطالعه‌م تو هر حوزه، نه یه گواهی رسمی:</p>
           <div class="skill-box"><div class="skill-label"><span> روانشناسی رفتاری</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
           <div class="skill-box"><div class="skill-label"><span>سی‌بی‌تی (CBT)</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
           <div class="skill-box"><div class="skill-label"><span>مشاوره فردی</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
@@ -1112,7 +1101,7 @@
   <!-- عکس‌ها -->
  <section class="photos-bg" style="background-image:linear-gradient(rgba(26,74,122,0.72), rgba(26,74,122,0.72)), url(&#39;bg-team.jpg&#39;); background-size:cover; background-position:center;">
     <div class="photos-inner">
-      <p>تیم ما</p>
+      <p>همراهان این مسیر</p>
       <div class="photos-row">
         <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
           <div class="photo-slot"><img src="arkan.jpg" alt="ارکان محمودی"></div>
@@ -1478,36 +1467,6 @@
       const preloader = document.getElementById('preloader');
       setTimeout(() => { preloader.style.opacity = '0'; setTimeout(() => preloader.style.display = 'none', 500); }, 800);
     });
-
-    // Counter animation
-    const counters = [
-      { id: 'c1', target: 452, current: 0 },
-      { id: 'c2', target: 1280, current: 0 },
-      { id: 'c3', target: 37, current: 0 },
-      { id: 'c4', target: 8, current: 0 }
-    ];
-    function animateCounters() {
-      counters.forEach(c => {
-        let step = Math.ceil(c.target / 60);
-        let interval = setInterval(() => {
-          if (c.current < c.target) {
-            c.current += step;
-            if (c.current > c.target) c.current = c.target;
-            const el = document.getElementById(c.id);
-            if (el) el.innerText = c.current;
-          } else clearInterval(interval);
-        }, 20);
-      });
-    }
-    const statsEl = document.querySelector('.stats');
-    if (statsEl) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) { animateCounters(); observer.disconnect(); }
-        });
-      });
-      observer.observe(statsEl);
-    }
 
     // Accordion
     document.querySelectorAll('.acc-btn').forEach(btn => {
